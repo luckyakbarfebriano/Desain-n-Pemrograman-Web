@@ -1,18 +1,109 @@
 <!doctype html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <title>Tugas Web - Lucky</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Web - Lucky Akbar Febriano</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family:
+          "Segoe UI",
+          -apple-system,
+          BlinkMacSystemFont,
+          Roboto,
+          sans-serif;
+      }
+
+      body {
+        background-color: #f8fafc;
+        color: #1e293b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        background: #ffffff;
+        padding: 35px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e2e8f0;
+        width: 100%;
+        max-width: 480px;
+      }
+
+      .header {
+        background-color: #1e3a8a; /* Biru Gelap Standar (Navy) */
+        padding: 16px;
+        border-radius: 8px;
+        text-align: center;
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        font-size: 1.35rem;
+        color: #ffffff;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      p.subtitle {
+        font-size: 0.88rem;
+        color: #64748b;
+        text-align: center;
+        margin-bottom: 28px;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      li {
+        margin-bottom: 12px;
+      }
+
+      a {
+        display: block;
+        padding: 13px 18px;
+        background-color: #1e3a8a; /* Biru Gelap Standar */
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+        border: 1px solid transparent;
+      }
+
+      /* Saat tombol diarahkan kursor / diklik: berubah jadi Biru Makaron */
+      a:hover,
+      a:active {
+        background-color: #a5f3fc; /* Biru Makaron / Soft Pastel Cyan */
+        color: #0f172a; /* Teks berubah jadi gelap biar kontras & mudah dibaca */
+        border-color: #38bdf8;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+      }
+    </style>
   </head>
   <body>
-    <h1>Daftar Tugas Web</h1>
-    <ul>
-      <li><a href="./jobsheet1/">Jobsheet 1</a></li>
-      <li><a href="./jobsheet2/">Jobsheet 2</a></li>
-      <li><a href="./jobsheet3/">Jobsheet 3</a></li>
-      <li><a href="./jobsheet4/">Jobsheet 4</a></li>
-      <!-- Tinggal tambah baris ini pas ada jobsheet baru nanti -->
-    </ul>
+    <div class="container">
+      <div class="header">
+        <h1>Kumpulan Jobsheet Web</h1>
+      </div>
+      <p class="subtitle">Desain & Pemrograman Web — Lucky Akbar Febriano</p>
+
+      <ul>
+        <li><a href="./jobsheet1/">Jobsheet 1</a></li>
+        <li><a href="./jobsheet2/">Jobsheet 2</a></li>
+        <li><a href="./jobsheet3/">Jobsheet 3</a></li>
+        <li><a href="./jobsheet4/">Jobsheet 4</a></li>
+      </ul>
+    </div>
   </body>
 </html>
