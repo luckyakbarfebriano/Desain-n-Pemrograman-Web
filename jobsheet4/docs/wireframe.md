@@ -90,13 +90,17 @@ Halaman yang sudah ada (Beranda, Daftar/Tambah Buku, Daftar/Tambah Anggota — J
 ## Wireframe: Riwayat Peminjaman per Anggota
 
 ```
-+--------------------------------------+
-|  Riwayat Peminjaman — Siti Aminah    |
-|--------------------------------------|
-|  Buku            | Pinjam   | Kembali | Status      |
-|  Laskar Pelangi   | 01/07    | 10/07   | Selesai     |
-|  Bumi Manusia      | 15/07    | -       | Dipinjam    |
-+--------------------------------------+
++-------------------------------------------------------------+
+|  Riwayat Peminjaman — Siti Aminah                           |
+|-------------------------------------------------------------|
+|  Buku                      | Pinjam  | Kembali | Status     |
+|  Laskar Pelangi            | 01/07   | 10/07   | Selesai    |
+|  Bumi Manusia              | 15/07   | -       | Dipinjam   |
+|  The Psychology of Money   | 20/07   | 25/07   | Selesai    |
+|  Crypto Trading Guide      | 05/08   | -       | Dipinjam   |
+|  The Richest Man in Babylon| 10/08   | 20/08   | Selesai    |
++-------------------------------------------------------------+
+
 ```
 
 ## Konsistensi dengan Desain yang Sudah Berjalan
