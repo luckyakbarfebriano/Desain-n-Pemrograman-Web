@@ -1,4 +1,4 @@
-# LAPORAN JOBSHEET 5
+# LAPORAN JOBSHEET 6
 
 # LUCKY AKBAR FEBRIANO/12/254107020134/TI-2D
 
@@ -56,7 +56,7 @@
       </section> <!-- Menutup bagian ringkasan. -->
     </main> <!-- Menutup bagian konten utama. -->
     <footer> <!-- Elemen semantik untuk bagian bawah (footer) halaman. -->
-      <p>&copy; 2026 SIMPUS-kecil &mdash; Jobsheet 5.</p> <!-- Menampilkan informasi hak cipta dan nama aplikasi. -->
+      <p>&copy; 2026 SIMPUS-kecil &mdash; Jobsheet 6.</p> <!-- Menampilkan informasi hak cipta dan nama aplikasi. -->
     </footer> <!-- Menutup bagian footer. -->
     <script src="assets/js/app.js"></script> <!-- Menghubungkan file JavaScript eksternal untuk fungsionalitas. -->
   </body> <!-- Menutup bagian tubuh dokumen. -->

@@ -225,12 +225,6 @@ footer {
     position: relative;
   }
 
-  #loading-indicator {
-    color: #1d5b8a;
-    font-style: italic;
-    margin-bottom: 0.75rem;
-  }
-
   .nav-toggle-label {
     display: block;
   }
@@ -259,4 +253,9 @@ footer {
   form select {
     max-width: 100%;
   }
+}
+#loading-indicator {
+  color: #1d5b8a;
+  font-style: italic;
+  margin-bottom: 0.75rem;
 }
