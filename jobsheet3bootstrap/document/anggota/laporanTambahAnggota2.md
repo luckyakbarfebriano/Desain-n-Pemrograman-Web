@@ -1,113 +1,165 @@
-# LAPORAN JOBSHEET 1 index.html
+# LAPORAN JOBSHEET 3
 
 NAMA : LUCKY AKBAR FEBRIANO
 NIM : 254107020134
 KELAS : TI 2D
 
 ```html
+<!-- Deklarasi tipe dokumen sebagai HTML5. -->
 <!doctype html>
-<!-- Deklarasi tipe dokumen HTML5. -->
+<!-- Elemen root dari halaman HTML, dengan bahasa diatur ke Indonesia. -->
 <html lang="id">
-  <!-- Pembuka tag html, menetapkan bahasa dokumen sebagai Indonesia. -->
+  <!-- Bagian head berisi metadata dan link ke file eksternal. -->
   <head>
-    <!-- Pembuka tag head, berisi metadata dokumen. -->
+    <!-- Mengatur encoding karakter dokumen menjadi UTF-8. -->
     <meta charset="UTF-8" />
-    <!-- Menentukan set karakter dokumen sebagai UTF-8 untuk mendukung berbagai karakter. -->
+    <!-- Mengatur viewport untuk responsivitas di berbagai perangkat, lebar sesuai lebar perangkat, skala awal 1.0. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Mengatur viewport untuk responsivitas di perangkat berbeda. -->
+    <!-- Menentukan judul halaman yang muncul di tab browser. -->
     <title>SIMPUS-kecil || Tambah Anggota</title>
-    <!-- Menetapkan judul halaman yang muncul di tab browser. -->
+    <!-- Menghubungkan ke stylesheet Bootstrap versi 5.3.0 dari CDN. -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Menghubungkan ke stylesheet kustom aplikasi. -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <!-- kode ini akan memuat dan menerapkan gaya-gaya yang didefinisikan dalam file style.css ke halaman web -->
   </head>
-  <!-- Penutup tag head. -->
+  <!-- Bagian body berisi konten yang terlihat di halaman web. -->
   <body>
-    <!-- Pembuka tag body, berisi konten yang terlihat oleh pengguna. -->
-    <header>
-      <!-- Pembuka tag header, menandai bagian atas halaman atau bagian pengantar. -->
-      <h1>SIMPUS-kecil</h1>
-      <!-- Judul utama halaman atau aplikasi. -->
-      <nav>
-        <!-- Pembuka tag nav, berisi tautan navigasi. -->
-        <ul>
-          <!-- Pembuka tag ul, membuat daftar tidak terurut untuk item navigasi. -->
-          <li><a href="../index.html">Home</a></li>
-          <!-- Item daftar dan tautan ke halaman utama. -->
-          <li><a href="../buku/list.html">Daftar Buku</a></li>
-          <!-- Item daftar dan tautan ke halaman daftar buku. -->
-          <li><a href="list.html">Daftar Anggota</a></li>
-          <!-- Item daftar dan tautan ke halaman daftar anggota. -->
-          <li><a href="tambah.html">Tambah Anggota</a></li>
-          <!-- Item daftar dan tautan ke halaman tambah anggota. -->
-        </ul>
-        <!-- Penutup tag ul. -->
-      </nav>
-      <!-- Penutup tag nav. -->
+    <!-- Elemen header yang berfungsi sebagai navigasi utama, menggunakan kelas navbar Bootstrap. -->
+    <header
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #1d5b8a"
+    >
+      <!-- Kontainer Bootstrap untuk mengatur lebar konten navbar. -->
+      <div class="container">
+        <!-- Brand atau nama aplikasi di navbar, yang mengarah ke halaman utama. -->
+        <a class="navbar-brand" href="../index.html">SIMPUS-kecil</a>
+        <!-- Tombol toggler untuk navigasi di perangkat mobile (ikon hamburger). -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <!-- Ikon hamburger di dalam tombol toggler. -->
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navigasi utama yang bisa dibuka/tutup, id navMenu harus sesuai dengan data-bs-target di tombol toggler. -->
+        <nav class="collapse navbar-collapse" id="navMenu">
+          <!-- Daftar item navigasi, menggunakan kelas ul Bootstrap. -->
+          <ul class="navbar-nav ms-auto">
+            <!-- Item navigasi untuk link Home. -->
+            <li class="nav-item">
+              <!-- Link Home. -->
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <!-- Item navigasi untuk link Daftar Buku. -->
+            <li class="nav-item">
+              <!-- Link Daftar Buku. -->
+              <a class="nav-link" href="../buku/list.html">Daftar Buku</a>
+            </li>
+            <!-- Item navigasi untuk link Tambah Buku. -->
+            <li class="nav-item">
+              <!-- Link Tambah Buku. -->
+              <a class="nav-link" href="../buku/tambah.html">Tambah Buku</a>
+            </li>
+            <!-- Item navigasi untuk link Daftar Anggota, dengan kelas 'active' karena ini halaman Tambah Anggota. -->
+            <li class="nav-item">
+              <!-- Link Daftar Anggota yang sedang aktif. -->
+              <a class="nav-link active" href="list.html">Daftar Anggota</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <!-- Penutup tag header. -->
 
-    <main>
-      <!-- Pembuka tag main, berisi konten utama dan unik dari halaman. -->
-      <section>
-        <!-- Pembuka tag section, mengelompokkan konten yang berhubungan secara tematis. -->
-        <h2>Tambah Anggota</h2>
-        <!-- Judul sub-bagian untuk formulir tambah anggota. -->
-        <form>
-          <!-- Pembuka tag form, membuat formulir untuk input pengguna. -->
-          <p>
-            <!-- Pembuka tag p, membuat paragraf untuk mengelompokkan label dan input. -->
-            <label for="nama">Nama:</label>
-            <!-- Label untuk input nama, terhubung ke input dengan id "nama". -->
-            <input type="text" id="nama" name="nama" required />
-            <!-- Input teks untuk nama, wajib diisi. -->
-          </p>
-          <!-- Penutup tag p. -->
-          <p>
-            <!-- Pembuka tag p, membuat paragraf untuk mengelompokkan label dan input. -->
-            <label for="no-anggota">No Anggota:</label>
-            <!-- Label untuk input nomor anggota, terhubung ke input dengan id "no-anggota". -->
-            <input type="text" id="no-anggota" name="no-anggota" required />
-            <!-- Input teks untuk nomor anggota, wajib diisi. -->
-          </p>
-          <!-- Penutup tag p. -->
-
-          <p>
-            <!-- Pembuka tag p, membuat paragraf untuk mengelompokkan label dan input. -->
-            <label for="alamat">Alamat:</label>
-            <!-- Label untuk input alamat, terhubung ke input dengan id "alamat". -->
-            <input type="text" id="alamat" name="alamat" required />
-            <!-- Input teks untuk alamat, wajib diisi. -->
-          </p>
-          <!-- Penutup tag p. -->
-          <p>
-            <!-- Pembuka tag p, membuat paragraf untuk mengelompokkan label dan input. -->
-            <label for="no-hp">No HP:</label>
-            <!-- Label untuk input nomor HP, terhubung ke input dengan id "no-hp". -->
-            <input type="tel" id="no-hp" name="no-hp" required />
-            <!-- Input telepon untuk nomor HP, wajib diisi. -->
-          </p>
-          <!-- Penutup tag p. -->
-          <p>
-            <!-- Pembuka tag p, membuat paragraf untuk mengelompokkan tombol. -->
-            <button type="submit">Simpan</button>
-            <!-- Tombol untuk mengirimkan formulir. -->
-          </p>
-          <!-- Penutup tag p. -->
-        </form>
-        <!-- Penutup tag form. -->
-      </section>
-      <!-- Penutup tag section. -->
+    <!-- Bagian utama konten halaman, menggunakan kontainer Bootstrap dengan margin atas/bawah 4. -->
+    <main class="container my-4">
+      <!-- Kartu Bootstrap dengan bayangan kecil dan margin bawah 4. -->
+      <div class="card shadow-sm mb-4">
+        <!-- Isi dari kartu. -->
+        <div class="card-body">
+          <!-- Judul kartu dengan margin bawah 3. -->
+          <h2 class="card-title mb-3">Tambah Anggota</h2>
+          <!-- Form untuk menambahkan data anggota. -->
+          <form>
+            <!-- Grup form untuk input Nama, dengan margin bawah 3. -->
+            <div class="mb-3">
+              <!-- Label untuk input Nama. -->
+              <label for="nama" class="form-label">Nama</label>
+              <!-- Input field untuk nama anggota, wajib diisi. -->
+              <input
+                type="text"
+                class="form-control"
+                id="nama"
+                name="nama"
+                required
+              />
+            </div>
+            <!-- Grup form untuk input No Anggota, dengan margin bawah 3. -->
+            <div class="mb-3">
+              <!-- Label untuk input No Anggota. -->
+              <label for="no-anggota" class="form-label">No Anggota</label>
+              <!-- Input field untuk nomor anggota, wajib diisi. -->
+              <input
+                type="text"
+                class="form-control"
+                id="no-anggota"
+                name="no-anggota"
+                required
+              />
+            </div>
+            <!-- Grup form untuk input Alamat, dengan margin bawah 3. -->
+            <div class="mb-3">
+              <!-- Label untuk input Alamat. -->
+              <label for="alamat" class="form-label">Alamat</label>
+              <!-- Input field untuk alamat anggota, wajib diisi. -->
+              <input
+                type="text"
+                class="form-control"
+                id="alamat"
+                name="alamat"
+                required
+              />
+            </div>
+            <!-- Grup form untuk input No HP, dengan margin bawah 3. -->
+            <div class="mb-3">
+              <!-- Label untuk input No HP. -->
+              <label for="no-hp" class="form-label">No HP</label>
+              <!-- Input field untuk nomor HP anggota, bertipe 'tel', wajib diisi. -->
+              <input
+                type="tel"
+                class="form-control"
+                id="no-hp"
+                name="no-hp"
+                required
+              />
+            </div>
+            <!-- Tombol submit form, dengan gaya Bootstrap primary. -->
+            <button type="submit" class="btn btn-primary">Simpan</button>
+          </form>
+        </div>
+      </div>
     </main>
-    <!-- Penutup tag main. -->
 
-    <footer>
-      <!-- Pembuka tag footer, berisi informasi hak cipta atau informasi tambahan. -->
-      <p>&copy; 2026 SIMPUS-kecil &mdash; Jobsheet 1.</p>
-      <!-- Paragraf berisi informasi hak cipta dan nama proyek. -->
+    <!-- Bagian footer halaman, dengan teks di tengah, warna sekunder, padding vertikal 3, dan ukuran font kecil. -->
+    <footer class="text-center text-secondary py-3 small">
+      <!-- Paragraf untuk teks copyright di footer, dengan margin bawah 0. -->
+      <p class="mb-0">
+        <!-- Teks copyright. -->
+        &copy; 2026 SIMPUS-kecil &mdash; Jobsheet 3 (Bootstrap)
+      </p>
     </footer>
-    <!-- Penutup tag footer. -->
+
+    <!-- Menghubungkan ke file JavaScript Bootstrap bundle dari CDN, untuk fungsionalitas seperti navbar toggler. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
-  <!-- Penutup tag body. -->
 </html>
+
 <!-- Penutup tag html. -->
 ```

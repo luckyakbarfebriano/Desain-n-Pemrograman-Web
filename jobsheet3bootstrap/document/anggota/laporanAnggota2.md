@@ -1,4 +1,4 @@
-# LAPORAN JOBSHEET 1 index.html
+# LAPORAN JOBSHEET 3 list anggota
 
 NAMA : LUCKY AKBAR FEBRIANO
 NIM : 254107020134
@@ -6,133 +6,132 @@ KELAS : TI 2D
 
 ```html
 <!doctype html>
-<!-- Deklarasi tipe dokumen HTML5. -->
 <html lang="id">
-  <!-- Elemen root dari halaman HTML, mengatur bahasa ke Bahasa Indonesia. -->
+  <!-- Deklarasi tipe dokumen dan elemen HTML utama dengan bahasa Indonesia -->
   <head>
-    <!-- Bagian head berisi metadata tentang dokumen. -->
     <meta charset="UTF-8" />
-    <!-- Menentukan pengkodean karakter untuk dokumen (UTF-8). -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Mengatur viewport agar responsif di berbagai perangkat. -->
     <title>SIMPUS-kecil || Daftar Anggota</title>
-    <!-- Menentukan judul halaman yang muncul di tab browser. -->
+    <!-- Memuat CSS Bootstrap dari CDN untuk styling responsif -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Memuat stylesheet kustom untuk gaya tambahan -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <!-- kode ini akan memuat dan menerapkan gaya-gaya yang didefinisikan dalam file style.css ke halaman web -->
   </head>
-  <!-- Penutup bagian head. -->
   <body>
-    <!-- Bagian body berisi semua konten yang terlihat oleh pengguna. -->
-    <header>
-      <!-- Elemen header untuk bagian pengantar atau navigasi situs. -->
-      <h1>SIMPUS-kecil</h1>
-      <!-- Judul utama atau nama aplikasi. -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle"> <!-- Membuat checkbox tersembunyi yang berfungsi sebagai pengontrol untuk membuka/menutup navigasi. -->
-      <label for="nav-toggle" class="nav-toggle-label">&#9776</label> <!-- Membuat label yang terhubung dengan checkbox, berfungsi sebagai ikon hamburger menu yang dapat diklik untuk mengaktifkan/menonaktifkan navigasi. -->
-      <nav>
-        <!-- Elemen nav untuk menampung link navigasi. -->
-        <ul>
-          <!-- Daftar tidak berurut untuk item navigasi. -->
-          <li><a href="../index.html">Home</a></li>
-          <!-- Item daftar dengan link ke halaman beranda. -->
-          <li><a href="../buku/list.html">Daftar Buku</a></li>
-          <!-- Item daftar dengan link ke halaman daftar buku. -->
-          <li><a href="list.html">Daftar Anggota</a></li>
-          <!-- Item daftar dengan link ke halaman daftar anggota (halaman ini). -->
-          <li><a href="../buku/tambah.html">Tambah Buku</a></li>
-          <!-- Item daftar dengan link ke halaman tambah buku. -->
-        </ul>
-        <!-- Penutup daftar tidak berurut. -->
-      </nav>
-      <!-- Penutup navigasi. -->
+    <!-- Bagian header yang berisi navigasi utama aplikasi -->
+    <header
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #1d5b8a"
+    >
+      <div class="container">
+        <!-- Logo atau nama aplikasi yang berfungsi sebagai tautan ke halaman utama -->
+        <a class="navbar-brand" href="../index.html">SIMPUS-kecil</a>
+        <!-- Tombol toggler untuk menu navigasi di perangkat mobile/layar kecil -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Konten navigasi yang akan ditampilkan atau disembunyikan -->
+        <nav class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <!-- Item navigasi untuk menuju ke berbagai halaman -->
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../buku/list.html">Daftar Buku</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../buku/tambah.html">Tambah Buku</a>
+            </li>
+            <li class="nav-item">
+              <!-- Tautan aktif menunjukkan halaman yang sedang dilihat -->
+              <a class="nav-link active" href="list.html">Daftar Anggota</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <!-- Penutup header. -->
 
-    <main>
-      <!-- Elemen main untuk konten utama dokumen. -->
-      <section>
-        <!-- Bagian terpisah dari konten dokumen. -->
-        <h2>Daftar Anggota</h2>
-        <!-- Sub-judul untuk bagian daftar anggota. -->
-        <table>
-          <!-- Tabel untuk menampilkan data anggota. -->
-          <thead>
-            <!-- Bagian kepala tabel. -->
-            <tr>
-              <!-- Baris kepala tabel. -->
-              <th>No Aggota</th>
-              <!-- Kolom judul untuk nomor anggota. -->
-              <th>Nama</th>
-              <!-- Kolom judul untuk nama anggota. -->
-              <th>Alamat</th>
-              <!-- Kolom judul untuk alamat anggota. -->
-              <th>No hp</th>
-              <!-- Kolom judul untuk nomor HP anggota. -->
-              <th>Aksi</th>
-              <!-- Kolom judul untuk tindakan (edit/hapus). -->
-            </tr>
-            <!-- Penutup baris kepala tabel. -->
-          </thead>
-          <!-- Penutup bagian kepala tabel. -->
-          <tbody>
-            <!-- Bagian badan tabel, berisi data baris. -->
-            <tr>
-              <!-- Baris data pertama. -->
-              <td>AOO1</td>
-              <!-- Data sel untuk nomor anggota. -->
-              <td>Siti Aminah</td>
-              <!-- Data sel untuk nama. -->
-              <td>Malang</td>
-              <!-- Data sel untuk alamat. -->
-              <td>08123*****</td>
-              <!-- Data sel untuk nomor HP. -->
-              <td>
-                <!-- Data sel untuk tombol aksi. -->
-                <button type="button">Edit</button>
-                <!-- Tombol untuk mengedit data anggota. -->
-                <button type="button">Hapus</button>
-                <!-- Tombol untuk menghapus data anggota. -->
-              </td>
-              <!-- Penutup data sel aksi. -->
-            </tr>
-            <!-- Penutup baris data pertama. -->
-            <tr>
-              <!-- Baris data kedua. -->
-              <td>AOO2</td>
-              <!-- Data sel untuk nomor anggota. -->
-              <td>Budi Santoso</td>
-              <!-- Data sel untuk nama. -->
-              <td>Batu</td>
-              <!-- Data sel untuk alamat. -->
-              <td>08123*****</td>
-              <!-- Data sel untuk nomor HP. -->
-              <td>
-                <!-- Data sel untuk tombol aksi. -->
-                <button type="button">Edit</button>
-                <!-- Tombol untuk mengedit data anggota. -->
-                <button type="button">Hapus</button>
-                <!-- Tombol untuk menghapus data anggota. -->
-              </td>
-              <!-- Penutup data sel aksi. -->
-            </tr>
-            <!-- Penutup baris data kedua. -->
-          </tbody>
-          <!-- Penutup bagian badan tabel. -->
-        </table>
-        <!-- Penutup tabel. -->
-      </section>
-      <!-- Penutup bagian konten. -->
+    <!-- Bagian utama halaman untuk menampilkan konten spesifik -->
+    <main class="container my-4">
+      <!-- Kartu (card) untuk membungkus konten daftar anggota -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h2 class="card-title mb-3">Daftar Anggota</h2>
+          <!-- Area responsif untuk tabel agar tetap rapi di berbagai ukuran layar -->
+          <div class="table-responsive">
+            <!-- Tabel untuk menampilkan daftar anggota -->
+            <table class="table table-striped table-hover align-middle">
+              <!-- Header tabel dengan kolom-kolom informasi anggota -->
+              <thead class="table-dark">
+                <tr>
+                  <th>No Anggota</th>
+                  <th>Nama</th>
+                  <th>Alamat</th>
+                  <th>No HP</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <!-- Body tabel berisi data anggota -->
+              <tbody>
+                <!-- Baris contoh data anggota pertama -->
+                <tr>
+                  <td>A001</td>
+                  <td>Siti Aminah</td>
+                  <td>Malang</td>
+                  <td>08123*****</td>
+                  <td>
+                    <!-- Tombol aksi untuk setiap anggota (Edit dan Hapus) -->
+                    <button type="button" class="btn btn-warning btn-sm">
+                      Edit
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm">
+                      Hapus
+                    </button>
+                  </td>
+                </tr>
+                <!-- Baris contoh data anggota kedua -->
+                <tr>
+                  <td>A002</td>
+                  <td>Budi Santoso</td>
+                  <td>Batu</td>
+                  <td>08123*****</td>
+                  <td>
+                    <button type="button" class="btn btn-warning btn-sm">
+                      Edit
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm">
+                      Hapus
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </main>
-    <!-- Penutup konten utama. -->
 
-    <footer>
-      <!-- Elemen footer untuk informasi hak cipta atau kontak. -->
-      <p>&copy; 2026 SIMPUS-kecil &mdash; Jobsheet 1.</p>
-      <!-- Paragraf berisi informasi hak cipta dan versi. -->
+    <!-- Bagian footer halaman dengan informasi hak cipta -->
+    <footer class="text-center text-secondary py-3 small">
+      <p class="mb-0">
+        &copy; 2026 SIMPUS-kecil &mdash; Jobsheet 3 (Bootstrap)
+      </p>
     </footer>
-    <!-- Penutup footer. -->
+
+    <!-- Memuat JavaScript Bootstrap dari CDN untuk fungsionalitas komponen seperti navbar toggler -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
-  <!-- Penutup bagian body. -->
 </html>
-<!-- Penutup dokumen HTML. -->
 ```
