@@ -1,272 +1,222 @@
-# LAPORAN JOBSHEET 1 index.html
+# LAPORAN JOBSHEET 4
 
 NAMA : LUCKY AKBAR FEBRIANO
 NIM : 254107020134
 KELAS : TI 2D
 
 ```css
-/* ===   Reset n Base  === */
+/* ===   Reset n Base  === */ /* Bagian ini mengatur ulang properti dasar dan gaya dasar untuk semua elemen. */
 * {
-  /* Selector universal untuk menargetkan semua elemen */
-  box-sizing: border-box; /* Mengatur model kotak untuk memasukkan padding dan border dalam lebar dan tinggi */
-  margin: 0; /* Menghilangkan margin default dari semua elemen */
-  padding: 0; /* Menghilangkan padding default dari semua elemen */
+  /* Selector universal, menargetkan semua elemen HTML. */
+  box-sizing: border-box; /* Mengatur model kotak agar padding dan border termasuk dalam lebar/tinggi total elemen. */
+  margin: 0; /* Menghilangkan margin bawaan dari semua elemen. */
+  padding: 0; /* Menghilangkan padding bawaan dari semua elemen. */
 }
 
 body {
-  /* Selector untuk elemen body */
+  /* Menargetkan elemen body HTML. */
   font-family:
-    "Poppins", sans-serif; /* Mengatur jenis font utama untuk teks di seluruh body */
-  color: #002d3f; /* Mengatur warna teks default untuk body */
-  background-color: #f0f8ff; /* Mengatur warna latar belakang default untuk body (light blue) */
-  line-height: 1.5; /* Mengatur tinggi baris teks untuk keterbacaan yang lebih baik */
+    "Poppins", sans-serif; /* Mengatur jenis font utama untuk teks di halaman, menggunakan Poppins atau font sans-serif default. */
+  color: #002d3f; /* Mengatur warna teks utama di halaman. */
+  background-color: #f0f8ff; /* Mengatur warna latar belakang halaman. */
+  line-height: 1.5; /* Mengatur tinggi baris teks menjadi 1,5 kali ukuran font. */
 }
 
 a {
-  /* Selector untuk semua elemen anchor (link) */
-  color: #1d5b8a; /* Mengatur warna teks untuk link (biru tua) */
-  text-decoration: none; /* Menghilangkan garis bawah default dari link */
+  /* Menargetkan semua elemen tautan (anchor). */
+  color: #1d5b8a; /* Mengatur warna teks untuk tautan. */
+  text-decoration: none; /* Menghilangkan garis bawah bawaan dari tautan. */
 }
 
 a:hover {
-  /* Selector untuk elemen anchor saat kursor diarahkan ke atasnya */
-  text-decoration: underline; /* Menambahkan garis bawah pada link saat di-hover */
+  /* Menargetkan tautan saat kursor mouse berada di atasnya (hover). */
+  text-decoration: underline; /* Menampilkan garis bawah pada tautan saat di-hover. */
 }
-/* ===== Header & Navbar (Flexbox) ===== */
+
+/* ===== Header & Navbar (Flexbox) ===== */ /* Bagian ini mengatur gaya untuk header dan navigasi menggunakan Flexbox. */
 header {
-  /* Selector untuk elemen header */
-  background-color: #1d5b8a; /* Mengatur warna latar belakang header (biru tua) */
-  color: #fff; /* Mengatur warna teks di dalam header menjadi putih */
-  padding: 1rem 1.5rem; /* Mengatur padding atas/bawah 1rem dan kiri/kanan 1.5rem untuk header */
-  display: flex; /* Mengatur display header menjadi flex container */
-  align-items: center; /* Menyelaraskan item-item di tengah secara vertikal dalam flex container */
-  justify-content: space-between; /* Mendistribusikan item-item dengan ruang di antara keduanya secara horizontal */
-  flex-wrap: wrap; /* Memungkinkan item-item flex untuk membungkus ke baris baru jika tidak cukup ruang */
+  /* Menargetkan elemen header. */
+  background-color: #1d5b8a; /* Mengatur warna latar belakang header. */
+  color: #fff; /* Mengatur warna teks di dalam header menjadi putih. */
+  padding: 1rem 1.5rem; /* Menambahkan padding di dalam header (atas/bawah 1rem, kiri/kanan 1.5rem). */
+  display: flex; /* Mengaktifkan Flexbox untuk tata letak elemen di dalam header. */
+  align-items: center; /* Menyelaraskan item Flexbox secara vertikal ke tengah. */
+  justify-content: space-between; /* Mendistribusikan item Flexbox secara horizontal dengan ruang di antara mereka. */
+  flex-wrap: wrap; /* Mengizinkan item Flexbox untuk membungkus ke baris baru jika ruang tidak cukup. */
 }
 
 header h1 {
-  /* Selector untuk elemen h1 di dalam header */
-  font-size: 1.4rem; /* Mengatur ukuran font untuk judul h1 di header */
+  /* Menargetkan elemen h1 di dalam header. */
+  font-size: 1.4rem; /* Mengatur ukuran font untuk judul h1 di header. */
 }
 
 header nav ul {
-  /* Selector untuk elemen ul di dalam nav di dalam header */
-  list-style: none; /* Menghilangkan bullet point default dari daftar */
-  display: flex; /* Mengatur display ul menjadi flex container */
-  gap: 1.25rem; /* Menambahkan jarak antar item flex (li) */
+  /* Menargetkan daftar tidak berurutan (ul) di dalam elemen nav yang berada di dalam header. */
+  list-style: none; /* Menghilangkan bullet point dari daftar. */
+  display: flex; /* Mengaktifkan Flexbox untuk item daftar agar berjejer horizontal. */
+  gap: 1.25rem; /* Menambahkan jarak antar item daftar. */
 }
 header nav a {
-  /* Selector untuk elemen a di dalam nav di dalam header */
-  color: #fff; /* Mengatur warna teks link di navbar menjadi putih */
-  font-weight: 500; /* Mengatur ketebalan font untuk link di navbar */
+  /* Menargetkan tautan (a) di dalam elemen nav yang berada di dalam header. */
+  color: #fff; /* Mengatur warna teks tautan di navigasi menjadi putih. */
+  font-weight: 500; /* Mengatur ketebalan font untuk tautan navigasi. */
 }
-/* ===== Main layout ===== */
+
+/* ===== Main layout ===== */ /* Bagian ini mengatur tata letak utama halaman. */
 main {
-  /* Selector untuk elemen main */
-  max-width: 1000px; /* Mengatur lebar maksimum untuk konten utama */
-  margin: 2rem auto; /* Mengatur margin atas/bawah 2rem dan tengah secara horizontal */
-  padding: 0 1.5rem; /* Mengatur padding kiri/kanan 1.5rem untuk konten utama */
+  /* Menargetkan elemen main. */
+  max-width: 1000px; /* Mengatur lebar maksimum area konten utama. */
+  margin: 2rem auto; /* Menambahkan margin atas/bawah 2rem dan secara otomatis menengahkan konten utama secara horizontal. */
+  padding: 0 1.5rem; /* Menambahkan padding kiri/kanan 1.5rem di dalam konten utama. */
 }
 
 section {
-  /* Selector untuk semua elemen section */
-  background-color: #fff; /* Mengatur warna latar belakang section menjadi putih */
-  border-radius: 8px; /* Memberikan sudut membulat pada section */
-  padding: 1.5rem; /* Mengatur padding di dalam section */
-  margin-bottom: 1.5rem; /* Mengatur margin bawah untuk setiap section */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); /* Menambahkan bayangan pada section */
+  /* Menargetkan elemen section. */
+  background-color: #fff; /* Mengatur warna latar belakang setiap section menjadi putih. */
+  border-radius: 8px; /* Memberi sudut membulat pada setiap section. */
+  padding: 1.5rem; /* Menambahkan padding di dalam setiap section. */
+  margin-bottom: 1.5rem; /* Menambahkan margin di bagian bawah setiap section. */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); /* Menambahkan efek bayangan pada setiap section. */
 }
 
 section h2 {
-  /* Selector untuk elemen h2 di dalam section */
-  margin-bottom: 1rem; /* Mengatur margin bawah untuk judul h2 */
-  color: #1d5b8a; /* Mengatur warna teks untuk judul h2 (biru tua) */
+  /* Menargetkan elemen h2 di dalam section. */
+  margin-bottom: 1rem; /* Menambahkan margin di bagian bawah judul h2. */
+  color: #1d5b8a; /* Mengatur warna teks untuk judul h2. */
 }
-/* ===== Kartu Statistik (CSS GRID) ===== */
+
+/* ===== Kartu Statistik (CSS GRID) ===== */ /* Bagian ini mengatur gaya untuk kartu statistik menggunakan CSS Grid. */
 
 main section:nth-of-type(2) {
-  /* Selector untuk section kedua di dalam main */
-  display: grid; /* Mengatur display section menjadi grid container */
+  /* Menargetkan section kedua yang berada di dalam main. */
+  display: grid; /* Mengaktifkan CSS Grid untuk tata letak elemen di dalam section ini. */
   grid-template-columns: repeat(
     3,
     1fr
-  ); /* Membuat 3 kolom dengan lebar yang sama */
-  gap: 1rem; /* Menambahkan jarak antar item grid */
+  ); /* Membuat 3 kolom dengan lebar yang sama (1 bagian fraksi). */
+  gap: 1rem; /* Menambahkan jarak antar kolom dan baris di dalam grid. */
 }
 
 main section:nth-of-type(2) article {
-  /* Selector untuk elemen article di dalam section kedua di main */
-  background-color: #eef4fa; /* Mengatur warna latar belakang article (light blue) */
-  border-radius: 8px; /* Memberikan sudut membulat pada article */
-  padding: 1.25rem; /* Mengatur padding di dalam article */
-  text-align: center; /* Menyelaraskan teks di tengah dalam article */
+  /* Menargetkan elemen article di dalam section kedua yang berada di dalam main. */
+  background-color: #eef4fa; /* Mengatur warna latar belakang untuk setiap artikel (kartu statistik). */
+  border-radius: 8px; /* Memberi sudut membulat pada setiap artikel. */
+  padding: 1.25rem; /* Menambahkan padding di dalam setiap artikel. */
+  text-align: center; /* Menengahkan teks di dalam setiap artikel. */
 }
 main section:nth-of-type(2) h2 {
-  /* Selector untuk elemen h2 di dalam section kedua di main */
-  grid-column: 1 / -1; /* Membuat h2 membentang dari kolom pertama hingga terakhir */
+  /* Menargetkan elemen h2 di dalam section kedua yang berada di dalam main. */
+  grid-column: 1 / -1; /* Membuat h2 membentang dari kolom pertama hingga kolom terakhir di dalam grid. */
 }
 main section:nth-of-type(2) article h3 {
-  /* Selector untuk elemen h3 di dalam article di section kedua di main */
-  font-size: 0.95rem; /* Mengatur ukuran font untuk judul h3 kartu statistik */
-  color: #55667a; /* Mengatur warna teks untuk judul h3 kartu statistik */
-  margin-bottom: 0.5rem; /* Mengatur margin bawah untuk judul h3 kartu statistik */
+  /* Menargetkan elemen h3 di dalam article, di dalam section kedua yang berada di dalam main. */
+  font-size: 0.95rem; /* Mengatur ukuran font untuk judul h3 di kartu statistik. */
+  color: #55667a; /* Mengatur warna teks untuk judul h3 di kartu statistik. */
+  margin-bottom: 0.5rem; /* Menambahkan margin di bagian bawah judul h3. */
 }
 
 main section:nth-of-type(2) article p {
-  /* Selector untuk elemen p di dalam article di section kedua di main */
-  font-size: 1.8rem; /* Mengatur ukuran font untuk paragraf (nilai statistik) */
-  font-weight: 700; /* Mengatur ketebalan font untuk paragraf (nilai statistik) */
-  color: #1d5b8a; /* Mengatur warna teks untuk paragraf (nilai statistik) */
-}
-/* ===== Tabel Data ===== */
-table {
-  /* Selector untuk elemen table */
-  width: 100%; /* Mengatur lebar tabel agar memenuhi container */
-  border-collapse: collapse; /* Menggabungkan border sel menjadi satu */
+  /* Menargetkan elemen p di dalam article, di dalam section kedua yang berada di dalam main. */
+  font-size: 1.8rem; /* Mengatur ukuran font untuk paragraf (nilai statistik) di kartu. */
+  font-weight: 700; /* Mengatur ketebalan font untuk paragraf di kartu. */
+  color: #1d5b8a; /* Mengatur warna teks untuk paragraf di kartu. */
 }
 
-th, /* Selector untuk elemen header tabel */
-td {
-  /* Selector untuk elemen data sel tabel */
-  text-align: left; /* Menyelaraskan teks ke kiri dalam sel tabel */
-  padding: 0.65rem 0.75rem; /* Mengatur padding di dalam sel tabel */
-  border-bottom: 1px solid #e2e6ea; /* Menambahkan border bawah pada sel tabel */
+/* ===== Tabel Data ===== */ /* Bagian ini mengatur gaya untuk tabel data. */
+table {
+  /* Menargetkan elemen table. */
+  width: 100%; /* Mengatur lebar tabel agar memenuhi lebar parent-nya. */
+  border-collapse: collapse; /* Menggabungkan border sel tabel menjadi satu garis. */
+}
+
+th, /* Menargetkan elemen header tabel (th). */
+        td {
+  /* Menargetkan elemen data sel tabel (td). */
+  text-align: left; /* Menyelaraskan teks di header dan sel tabel ke kiri. */
+  padding: 0.65rem 0.75rem; /* Menambahkan padding di dalam header dan sel tabel. */
+  border-bottom: 1px solid #e2e6ea; /* Menambahkan border tipis di bagian bawah setiap baris. */
 }
 
 thead {
-  /* Selector untuk elemen thead (header tabel) */
-  background-color: #1d5b8a; /* Mengatur warna latar belakang thead (biru tua) */
-  color: #fff; /* Mengatur warna teks di thead menjadi putih */
+  /* Menargetkan elemen thead (header tabel). */
+  background-color: #1d5b8a; /* Mengatur warna latar belakang untuk thead. */
+  color: #fff; /* Mengatur warna teks di thead menjadi putih. */
 }
 
 tbody tr:hover {
-  /* Selector untuk baris tabel saat kursor diarahkan ke atasnya */
-  background-color: #eef4fa; /* Mengubah warna latar belakang baris saat di-hover (light blue) */
+  /* Menargetkan baris tabel (tr) di dalam tbody saat di-hover. */
+  background-color: #eef4fa; /* Mengubah warna latar belakang baris saat di-hover. */
 }
 
 td button {
-  /* Selector untuk elemen button di dalam sel tabel */
-  padding: 0.35rem 0.7rem; /* Mengatur padding untuk tombol di tabel */
-  margin-right: 0.35rem; /* Mengatur margin kanan untuk tombol di tabel */
-  border: none; /* Menghilangkan border dari tombol */
-  border-radius: 4px; /* Memberikan sudut membulat pada tombol */
-  cursor: pointer; /* Mengubah kursor menjadi pointer saat di-hover */
-  font-size: 0.85rem; /* Mengatur ukuran font untuk tombol di tabel */
+  /* Menargetkan semua elemen button yang berada di dalam sel tabel (td). */
+  padding: 0.35rem 0.7rem; /* Menambahkan padding di dalam tombol. */
+  margin-right: 0.35rem; /* Menambahkan margin di sebelah kanan tombol. */
+  border: none; /* Menghilangkan border dari tombol. */
+  border-radius: 4px; /* Memberi sudut membulat pada tombol. */
+  cursor: pointer; /* Mengubah kursor menjadi pointer saat di atas tombol. */
+  font-size: 0.85rem; /* Mengatur ukuran font untuk teks di tombol. */
 }
 
 td button:first-of-type {
-  /* Selector untuk tombol pertama di dalam sel tabel */
-  background-color: #f0ad4e; /* Mengatur warna latar belakang untuk tombol pertama (orange) */
-  color: #fff; /* Mengatur warna teks untuk tombol pertama menjadi putih */
+  /* Menargetkan tombol pertama di dalam sel tabel (biasanya tombol "Edit"). */
+  background-color: #f0ad4e; /* Mengatur warna latar belakang tombol pertama. */
+  color: #fff; /* Mengatur warna teks tombol pertama menjadi putih. */
 }
 
 td button:last-of-type {
-  /* Selector untuk tombol terakhir di dalam sel tabel */
-  background-color: #d9534f; /* Mengatur warna latar belakang untuk tombol terakhir (merah) */
-  color: #fff; /* Mengatur warna teks untuk tombol terakhir menjadi putih */
+  /* Menargetkan tombol terakhir di dalam sel tabel (biasanya tombol "Hapus"). */
+  background-color: #d9534f; /* Mengatur warna latar belakang tombol terakhir. */
+  color: #fff; /* Mengatur warna teks tombol terakhir menjadi putih. */
 }
-/* ===== Form Tambah Buku ===== */
+
+/* ===== Form Tambah Buku ===== */ /* Bagian ini mengatur gaya untuk formulir tambah buku. */
 form p {
-  /* Selector untuk elemen p di dalam form */
-  margin-bottom: 1rem; /* Mengatur margin bawah untuk paragraf di form */
+  /* Menargetkan elemen paragraf (p) di dalam form. */
+  margin-bottom: 1rem; /* Menambahkan margin di bagian bawah setiap paragraf di form. */
 }
 
 form label {
-  /* Selector untuk elemen label di dalam form */
-  display: block; /* Mengubah label menjadi elemen blok */
-  margin-bottom: 0.35rem; /* Mengatur margin bawah untuk label */
-  font-weight: 600; /* Mengatur ketebalan font untuk label */
-  color: #444; /* Mengatur warna teks untuk label */
+  /* Menargetkan elemen label di dalam form. */
+  display: block; /* Membuat label menjadi elemen blok sehingga menempati baris penuh. */
+  margin-bottom: 0.35rem; /* Menambahkan margin di bagian bawah label. */
+  font-weight: 600; /* Mengatur ketebalan font untuk label. */
+  color: #444; /* Mengatur warna teks untuk label. */
 }
 
-form input, /* Selector untuk elemen input di dalam form */
-form select {
-  /* Selector untuk elemen select di dalam form */
-  width: 100%; /* Mengatur lebar input/select agar memenuhi container */
-  max-width: 400px; /* Mengatur lebar maksimum untuk input/select */
-  padding: 0.55rem 0.7rem; /* Mengatur padding untuk input/select */
-  border: 1px solid #cdd4da; /* Menambahkan border pada input/select */
-  border-radius: 4px; /* Memberikan sudut membulat pada input/select */
-  font-size: 1rem; /* Mengatur ukuran font untuk input/select */
+form input, /* Menargetkan elemen input di dalam form. */
+        form select {
+  /* Menargetkan elemen select di dalam form. */
+  width: 100%; /* Mengatur lebar input dan select agar memenuhi lebar parent-nya. */
+  max-width: 400px; /* Mengatur lebar maksimum untuk input dan select. */
+  padding: 0.55rem 0.7rem; /* Menambahkan padding di dalam input dan select. */
+  border: 1px solid #cdd4da; /* Menambahkan border tipis di sekitar input dan select. */
+  border-radius: 4px; /* Memberi sudut membulat pada input dan select. */
+  font-size: 1rem; /* Mengatur ukuran font untuk teks di input dan select. */
 }
 
 form button[type="submit"] {
-  /* Selector untuk elemen button dengan atribut type="submit" di dalam form */
-  background-color: #1d5b8a; /* Mengatur warna latar belakang tombol submit (biru tua) */
-  color: #fff; /* Mengatur warna teks tombol submit menjadi putih */
-  border: none; /* Menghilangkan border dari tombol submit */
-  padding: 0.55rem 1rem; /* Mengatur padding untuk tombol submit */
-  border-radius: 4px; /* Memberikan sudut membulat pada tombol submit */
-  font-size: 1rem; /* Mengatur ukuran font untuk tombol submit */
-  cursor: pointer; /* Mengubah kursor menjadi pointer saat di-hover */
+  /* Menargetkan tombol submit di dalam form. */
+  background-color: #1d5b8a; /* Mengatur warna latar belakang tombol submit. */
+  color: #fff; /* Mengatur warna teks tombol submit menjadi putih. */
+  border: none; /* Menghilangkan border dari tombol submit. */
+  padding: 0.55rem 1rem; /* Menambahkan padding di dalam tombol submit. */
+  border-radius: 4px; /* Memberi sudut membulat pada tombol submit. */
+  font-size: 1rem; /* Mengatur ukuran font untuk teks di tombol submit. */
+  cursor: pointer; /* Mengubah kursor menjadi pointer saat di atas tombol submit. */
 }
 
 form button[type="submit"]:hover {
-  /* Selector untuk tombol submit saat kursor diarahkan ke atasnya */
-  background-color: #144a6e; /* Mengubah warna latar belakang tombol submit saat di-hover (biru tua sedikit lebih gelap) */
+  /* Menargetkan tombol submit saat kursor mouse berada di atasnya (hover). */
+  background-color: #144a6e; /* Mengubah warna latar belakang tombol submit saat di-hover. */
 }
-/* ===== Footer ===== */
+
+/* ===== Footer ===== */ /* Bagian ini mengatur gaya untuk footer. */
 footer {
-  /* Selector untuk elemen footer */
-  text-align: center; /* Menyelaraskan teks di tengah dalam footer */
-  color: #7a8794; /* Mengatur warna teks untuk footer */
-  padding: 1.25rem; /* Mengatur padding di dalam footer */
-  font-size: 0.9rem; /* Mengatur ukuran font untuk footer */
-}
-
-/* ===== Responsive Design ===== */
-.table-responsive {
-  /* Selector untuk elemen dengan kelas table-responsive */
-  overflow-x: auto; /* Mengaktifkan scroll horizontal jika konten tabel terlalu lebar */
-}
-
-/* ===== Hamburger menu ===== */
-.nav-toggle {
-  /* Selector untuk elemen dengan kelas nav-toggle */
-  display: none; /* Menyembunyikan elemen ini secara default (biasanya checkbox) */
-}
-
-.nav-toggle-label {
-  /* Selector untuk elemen dengan kelas nav-toggle-label */
-  display: none; /* Menyembunyikan label ini secara default (ikon hamburger) */
-  font-size: 1.6rem; /* Mengatur ukuran font untuk label */
-  color: #fff; /* Mengatur warna teks label menjadi putih */
-  cursor: pointer; /* Mengubah kursor menjadi pointer saat di-hover */
-}
-/* ===== responsive breakpoint ===== */
-@media (max-width: 768px) {
-  /* Media query yang berlaku saat lebar layar kurang dari atau sama dengan 768px */
-  header {
-    /* Selector untuk elemen header */
-    position: relative; /* Mengatur posisi header menjadi relatif */
-  }
-
-  .nav-toggle-label {
-    /* Selector untuk elemen dengan kelas nav-toggle-label */
-    display: block; /* Menampilkan label (ikon hamburger) saat di layar kecil */
-  }
-
-  header nav {
-    /* Selector untuk elemen nav di dalam header */
-    display: none; /* Menyembunyikan navigasi secara default di layar kecil */
-    width: 100%; /* Mengatur lebar navigasi menjadi 100% */
-    order: 3; /* Mengatur urutan tampilan navigasi dalam flex container */
-    margin-top: 1rem; /* Memberikan margin atas pada navigasi */
-  }
-
-  .nav-toggle:checked ~ nav {
-    /* Selector untuk nav saat nav-toggle dicentang */
-    display: block; /* Menampilkan navigasi saat tombol toggle dicentang */
-  }
-  header nav ul {
-    /* Selector untuk elemen ul di dalam nav di dalam header */
-    flex-direction: column; /* Mengatur arah item flex menjadi kolom */
-    gap: 0.75rem; /* Menambahkan jarak antar item flex (li) */
-  }
-
-  main section:nth-of-type(2) {
-    /* Selector untuk section kedua di dalam main */
-    grid-template-columns: 1fr; /* Mengubah tata letak grid menjadi satu kolom */
-  }
+  /* Menargetkan elemen footer. */
+  text-align: center; /* Menengahkan teks di dalam footer. */
+  color: #7a8794; /* Mengatur warna teks di footer. */
+  padding: 1.25rem; /* Menambahkan padding di dalam footer. */
+  font-size: 0.9rem; /* Mengatur ukuran font untuk teks di footer. */
 }
 ```

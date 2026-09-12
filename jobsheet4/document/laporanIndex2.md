@@ -1,4 +1,4 @@
-# LAPORAN JOBSHEET 1 index.html
+# LAPORAN JOBSHEET 4
 
 NAMA : LUCKY AKBAR FEBRIANO
 NIM : 254107020134
@@ -6,95 +6,105 @@ KELAS : TI 2D
 
 ```html
 <!doctype html>
-<!-- Mendefinisikan tipe dokumen sebagai HTML5. -->
+<!-- Ini adalah deklarasi tipe dokumen HTML5. -->
 <html lang="id">
-  <!-- Memulai elemen root HTML dan menentukan bahasa dokumen adalah Indonesia. -->
+  <!-- Ini adalah elemen root dari halaman HTML, menentukan bahasa dokumen adalah Bahasa Indonesia. -->
   <head>
-    <!-- Memulai bagian head dokumen, yang berisi metadata. -->
+    <!-- Bagian head berisi metadata tentang halaman web, yang tidak terlihat di browser. -->
     <meta charset="UTF-8" />
-    <!-- Menetapkan set karakter dokumen ke UTF-8. -->
+    <!-- Ini menentukan pengkodean karakter untuk dokumen sebagai UTF-8, mendukung berbagai karakter. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Mengatur viewport agar halaman responsif di berbagai perangkat. -->
+    <!-- Ini mengkonfigurasi viewport untuk membuat halaman responsif di berbagai perangkat. -->
     <title>SIMPUS-kecil || HOME</title>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle"> <!-- Membuat checkbox tersembunyi yang berfungsi sebagai pengontrol untuk membuka/menutup navigasi. -->
-    <label for="nav-toggle" class="nav-toggle-label">&#9776</label> <!-- Membuat label yang terhubung dengan checkbox, berfungsi sebagai ikon hamburger menu yang dapat diklik untuk mengaktifkan/menonaktifkan navigasi. -->
-    <!-- Menetapkan judul halaman yang muncul di tab browser atau hasil pencarian. -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <!-- kode ini akan memuat dan menerapkan gaya-gaya yang didefinisikan dalam file style.css ke halaman web -->
+    <!-- Ini adalah judul halaman yang muncul di tab browser. -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Ini menautkan file CSS eksternal untuk mengatur gaya visual halaman. -->
   </head>
-  <!-- Menutup bagian head dokumen. -->
+  <!-- Penutup dari bagian head. -->
   <body>
-    <!-- Memulai bagian body dokumen, yang berisi semua konten yang terlihat oleh pengguna. -->
+    <!-- Bagian body berisi semua konten yang terlihat di halaman web. -->
     <header>
-      <!-- Memulai bagian header halaman, biasanya berisi logo, judul situs, dan navigasi. -->
+      <!-- Elemen header biasanya berisi logo, judul situs, dan navigasi utama. -->
       <h1>SIMPUS-kecil</h1>
-      <!-- Menetapkan judul utama situs atau aplikasi. -->
+      <!-- Ini adalah judul utama situs web. -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <!-- Ini adalah checkbox tersembunyi yang digunakan untuk mengontrol menu navigasi pada layar kecil. -->
+      <label for="nav-toggle" class="nav-toggle-label">&#9776</label>
+      <!-- Ini adalah label yang berfungsi sebagai ikon "hamburger" untuk membuka/menutup navigasi di layar kecil. -->
       <nav>
-        <!-- Memulai bagian navigasi halaman. -->
+        <!-- Elemen nav berisi tautan navigasi utama situs web. -->
         <ul>
-          <!-- Memulai daftar tidak berurutan untuk item navigasi. -->
+          <!-- Ini adalah daftar tidak terurut untuk item-item navigasi. -->
           <li><a href="index.html">Home</a></li>
-          <!-- Menetapkan item daftar dengan tautan ke halaman utama (Home). -->
+          <!-- Ini adalah item daftar yang berisi tautan ke halaman beranda. -->
           <li><a href="buku/list.html">Daftar Buku</a></li>
-          <!-- Menetapkan item daftar dengan tautan ke halaman daftar buku. -->
+          <!-- Ini adalah item daftar yang berisi tautan ke halaman daftar buku. -->
           <li><a href="buku/tambah.html">Tambah Buku</a></li>
-          <!-- Menetapkan item daftar dengan tautan ke halaman tambah buku. -->
+          <!-- Ini adalah item daftar yang berisi tautan ke halaman untuk menambahkan buku baru. -->
           <li><a href="anggota/list.html">Daftar Anggota</a></li>
-          <!-- Menetapkan item daftar dengan tautan ke halaman daftar anggota. -->
+          <!-- Ini adalah item daftar yang berisi tautan ke halaman daftar anggota. -->
         </ul>
-        <!-- Menutup daftar tidak berurutan. -->
+        <!-- Penutup dari daftar tidak terurut. -->
       </nav>
-      <!-- Menutup bagian navigasi. -->
+      <!-- Penutup dari bagian navigasi. -->
     </header>
-    <!-- Menutup bagian header halaman. -->
+    <!-- Penutup dari bagian header. -->
     <main>
-      <!-- Memulai bagian konten utama dan unik dari dokumen. -->
+      <!-- Elemen main berisi konten utama atau dominan dari dokumen. -->
       <section>
-        <!-- Memulai bagian tematik konten, seperti bagian pengantar. -->
+        <!-- Bagian ini mengelompokkan konten terkait, seperti bagian selamat datang. -->
         <h2>Selamat Datang di SIMPUS-kecil</h2>
-        <!-- Menetapkan sub-judul untuk bagian selamat datang. -->
+        <!-- Ini adalah sub-judul untuk bagian selamat datang. -->
         <p>
-          <!-- Memulai paragraf teks. -->
+          <!-- Ini adalah elemen paragraf untuk teks. -->
           SIMPUS-kecil adalah aplikasi perpustakaan sederhana yang dirancang
+          <!-- Ini adalah bagian dari teks di dalam paragraf yang menjelaskan aplikasi. -->
           untuk memudahkan pengelolaan data buku dan anggota perpustakaan.
+          <!-- Ini adalah kelanjutan dari teks di dalam paragraf. -->
         </p>
-        <!-- Menutup paragraf teks. -->
+        <!-- Penutup dari paragraf. -->
       </section>
-      <!-- Menutup bagian tematik pertama. -->
-
+      <!-- Penutup dari bagian pertama. -->
       <section>
-        <!-- Memulai bagian tematik konten lainnya, seperti bagian ringkasan. -->
+        <!-- Bagian ini mengelompokkan konten terkait, seperti ringkasan data. -->
         <h2>Ringkasan</h2>
-        <!-- Menetapkan sub-judul untuk bagian ringkasan. -->
+        <!-- Ini adalah sub-judul untuk bagian ringkasan. -->
         <article>
-          <!-- Memulai elemen artikel, yang merupakan konten mandiri. -->
+          <!-- Elemen article berisi konten yang berdiri sendiri, seperti ringkasan statistik. -->
           <h3>Total Buku</h3>
-          <!-- Menetapkan judul untuk ringkasan total buku. -->
-          <p>12</p>
-          <!-- Menampilkan jumlah total buku dalam paragraf. -->
-        </article>
-        <!-- Menutup elemen artikel pertama. -->
-        <article>
-          <!-- Memulai elemen artikel kedua. -->
-          <h3>Total Anggota</h3>
-          <!-- Menetapkan judul untuk ringkasan total anggota. -->
+          <!-- Ini adalah sub-judul untuk total buku. -->
           <p>8</p>
-          <!-- Menampilkan jumlah total anggota dalam paragraf. -->
+          <!-- Ini menampilkan jumlah total buku. -->
         </article>
-        <!-- Menutup elemen artikel kedua. -->
+        <!-- Penutup dari artikel pertama. -->
+        <article>
+          <!-- Elemen article berisi konten yang berdiri sendiri. -->
+          <h3>Total Anggota</h3>
+          <!-- Ini adalah sub-judul untuk total anggota. -->
+          <p>2</p>
+          <!-- Ini menampilkan jumlah total anggota. -->
+        </article>
+        <!-- Penutup dari artikel kedua. -->
+        <article>
+          <!-- Elemen article berisi konten yang berdiri sendiri. -->
+          <h3>Sedang dipinjam</h3>
+          <!-- Ini adalah sub-judul untuk jumlah buku yang sedang dipinjam. -->
+          <p>3</p>
+          <!-- Ini menampilkan jumlah buku yang sedang dipinjam. -->
+        </article>
+        <!-- Penutup dari artikel ketiga. -->
       </section>
-      <!-- Menutup bagian tematik kedua. -->
+      <!-- Penutup dari bagian kedua. -->
     </main>
-    <!-- Menutup bagian konten utama. -->
-
+    <!-- Penutup dari bagian utama. -->
     <footer>
-      <!-- Memulai bagian footer dokumen, biasanya berisi informasi hak cipta. -->
-      <p>&copy; 2026 SIMPUS-kecil &mdash; Jobsheet 1.</p>
-      <!-- Menampilkan informasi hak cipta dan proyek dalam paragraf. -->
+      <!-- Elemen footer biasanya berisi informasi hak cipta, kontak, atau tautan terkait. -->
+      <p>&copy; 2026 SIMPUS-kecil &mdash; Jobsheet 3.</p>
+      <!-- Ini adalah paragraf yang berisi informasi hak cipta dan nama proyek. -->
     </footer>
-    <!-- Menutup bagian footer. -->
+    <!-- Penutup dari bagian footer. -->
   </body>
-  <!-- Menutup bagian body dokumen. -->
+  <!-- Penutup dari bagian body. -->
 </html>
-<!-- Menutup elemen root HTML. -->
+<!-- Penutup dari dokumen HTML. -->
 ```

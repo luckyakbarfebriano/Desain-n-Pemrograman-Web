@@ -1,4 +1,4 @@
-# LAPORAN JOBSHEET 1 index.html
+# LAPORAN JOBSHEET 4
 
 NAMA : LUCKY AKBAR FEBRIANO
 NIM : 254107020134
@@ -6,133 +6,129 @@ KELAS : TI 2D
 
 ```html
 <!doctype html>
-<!-- Deklarasi tipe dokumen sebagai HTML5 -->
+<!-- Mendefinisikan tipe dokumen sebagai HTML5 -->
 <html lang="id">
-  <!-- Elemen root dokumen HTML, bahasa utama konten adalah Indonesia -->
+  <!-- Elemen root dari halaman HTML, dengan atribut bahasa Indonesia -->
   <head>
-    <!-- Bagian head dokumen yang berisi metadata tentang halaman web -->
+    <!-- Bagian kepala dokumen yang berisi metadata -->
     <meta charset="UTF-8" />
-    <!-- Mengatur pengkodean karakter dokumen menjadi UTF-8, mendukung berbagai karakter -->
+    <!-- Menentukan pengkodean karakter UTF-8 untuk mendukung berbagai karakter -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Mengatur viewport agar responsif di berbagai perangkat -->
     <title>SIMPUS-kecil || Tambah Buku</title>
-    <!-- Judul halaman web yang muncul di tab browser -->
+    <!-- Menentukan judul halaman yang muncul di tab browser -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <!-- kode ini akan memuat dan menerapkan gaya-gaya yang didefinisikan dalam file style.css ke halaman web -->
+    <!-- Menghubungkan ke file stylesheet eksternal untuk styling -->
   </head>
-  <!-- Penutup bagian head dokumen -->
   <body>
-    <!-- Bagian body dokumen yang berisi seluruh konten yang terlihat oleh pengguna -->
+    <!-- Bagian tubuh dokumen yang berisi konten yang terlihat -->
     <header>
-      <!-- Elemen header yang berisi konten pengantar -->
+      <!-- Elemen header yang berisi konten pengantar atau navigasi -->
       <h1>SIMPUS-kecil</h1>
-      <!-- Judul utama halaman -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle"> <!-- Membuat checkbox tersembunyi yang berfungsi sebagai pengontrol untuk membuka/menutup navigasi. -->
-      <label for="nav-toggle" class="nav-toggle-label">&#9776</label> <!-- Membuat label yang terhubung dengan checkbox, berfungsi sebagai ikon hamburger menu yang dapat diklik untuk mengaktifkan/menonaktifkan navigasi. -->
+      <!-- Judul utama atau nama aplikasi -->
       <nav>
-        <!-- Elemen navigasi yang berisi link-link navigasi -->
+        <!-- Elemen navigasi untuk link-link -->
         <ul>
-          <!-- Daftar tak berurut untuk item navigasi -->
+          <!-- Daftar tak berurutan untuk item navigasi -->
           <li><a href="../index.html">Home</a></li>
-          <!-- Item daftar dan link ke halaman utama -->
+          <!-- Item daftar dengan link ke halaman Home -->
           <li><a href="../buku/list.html">Daftar Buku</a></li>
-          <!-- Item daftar dan link ke halaman daftar buku -->
+          <!-- Item daftar dengan link ke halaman Daftar Buku -->
           <li><a href="../buku/tambah.html">Tambah Buku</a></li>
-          <!-- Item daftar dan link ke halaman tambah buku -->
+          <!-- Item daftar dengan link ke halaman Tambah Buku -->
           <li><a href="list.html">Daftar Anggota</a></li>
-          <!-- Item daftar dan link ke halaman daftar anggota -->
+          <!-- Item daftar dengan link ke halaman Daftar Anggota -->
         </ul>
-        <!-- Penutup daftar tak berurut -->
       </nav>
       <!-- Penutup elemen navigasi -->
     </header>
     <!-- Penutup elemen header -->
 
     <main>
-      <!-- Elemen main yang berisi konten utama halaman -->
+      <!-- Konten utama dari dokumen -->
       <section>
-        <!-- Bagian konten yang terpisah atau mandiri -->
+        <!-- Bagian mandiri dari konten dokumen -->
         <h2>Tambah Buku</h2>
         <!-- Sub-judul untuk bagian ini -->
         <form>
-          <!-- Elemen form untuk mengumpulkan input dari pengguna -->
+          <!-- Elemen form untuk mengumpulkan input pengguna -->
           <p>
-            <!-- Paragraf untuk mengelompokkan label dan input judul -->
+            <!-- Paragraf untuk mengelompokkan label dan input -->
             <label for="judul">Judul:</label>
-            <!-- Label untuk input judul -->
+            <!-- Label untuk input judul buku -->
             <input type="text" id="judul" name="judul" required />
-            <!-- Input teks untuk judul -->
+            <!-- Input teks untuk judul, dengan ID, nama, dan atribut wajib diisi -->
           </p>
-          <!-- Penutup paragraf judul -->
+          <!-- Penutup paragraf -->
           <p>
-            <!-- Paragraf untuk mengelompokkan label dan input pengarang -->
+            <!-- Paragraf untuk mengelompokkan label dan input -->
             <label for="pengarang">Pengarang:</label>
-            <!-- Label untuk input pengarang -->
+            <!-- Label untuk input pengarang buku -->
             <input type="text" id="pengarang" name="pengarang" required />
-            <!-- Input teks untuk pengarang -->
+            <!-- Input teks untuk pengarang, dengan ID, nama, dan atribut wajib diisi -->
           </p>
-          <!-- Penutup paragraf pengarang -->
+          <!-- Penutup paragraf -->
           <p>
-            <!-- Paragraf untuk mengelompokkan label dan input tahun terbit -->
+            <!-- Paragraf untuk mengelompokkan label dan input -->
             <label for="tahun">Tahun Terbit:</label>
             <!-- Label untuk input tahun terbit -->
             <input type="number" id="tahun" name="tahun" required />
-            <!-- Input angka untuk tahun terbit -->
+            <!-- Input angka untuk tahun terbit, dengan ID, nama, dan atribut wajib diisi -->
           </p>
-          <!-- Penutup paragraf tahun terbit -->
+          <!-- Penutup paragraf -->
           <p>
-            <!-- Paragraf untuk mengelompokkan label dan input ISBN -->
+            <!-- Paragraf untuk mengelompokkan label dan input -->
             <label for="isbn">ISBN:</label>
-            <!-- Label untuk input ISBN -->
+            <!-- Label untuk input ISBN buku -->
             <input type="text" id="isbn" name="isbn" required />
-            <!-- Input teks untuk ISBN -->
+            <!-- Input teks untuk ISBN, dengan ID, nama, dan atribut wajib diisi -->
           </p>
-          <!-- Penutup paragraf ISBN -->
+          <!-- Penutup paragraf -->
           <p>
-            <!-- Paragraf untuk mengelompokkan label dan input stok -->
+            <!-- Paragraf untuk mengelompokkan label dan input -->
             <label for="stok">Stok:</label>
-            <!-- Label untuk input stok -->
+            <!-- Label untuk input stok buku -->
             <input type="number" id="stok" name="stok" required />
-            <!-- Input angka untuk stok -->
+            <!-- Input angka untuk stok, dengan ID, nama, dan atribut wajib diisi -->
           </p>
-          <!-- Penutup paragraf stok -->
+          <!-- Penutup paragraf -->
           <p>
-            <!-- Paragraf untuk mengelompokkan label dan input kategori -->
+            <!-- Paragraf untuk mengelompokkan label dan input -->
             <label for="Kategori">Kategori:</label><br />
-            <!-- Label untuk input kategori, diikuti dengan baris baru -->
+            <!-- Label untuk pilihan kategori, diikuti dengan baris baru -->
             <select id="Kategori" name="Kategori" required>
-              <!-- Dropdown (select) untuk memilih kategori -->
+              <!-- Dropdown menu untuk memilih kategori, dengan ID, nama, dan atribut wajib diisi -->
               <option value="Fiksi">Fiksi</option>
-              <!-- Pilihan kategori Fiksi -->
+              <!-- Opsi dropdown untuk kategori Fiksi -->
               <option value="Non-Fiksi">Non-Fiksi</option>
-              <!-- Pilihan kategori Non-Fiksi -->
+              <!-- Opsi dropdown untuk kategori Non-Fiksi -->
               <option value="Referensi">Referensi</option>
-              <!-- Pilihan kategori Referensi -->
+              <!-- Opsi dropdown untuk kategori Referensi -->
             </select>
-            <!-- Penutup dropdown kategori -->
+            <!-- Penutup elemen select -->
           </p>
-          <!-- Penutup paragraf kategori -->
+          <!-- Penutup paragraf -->
           <p>
             <!-- Paragraf untuk tombol submit -->
             <button type="submit">Simpan</button>
-            <!-- Tombol untuk mengirimkan formulir -->
+            <!-- Tombol untuk mengirimkan data form -->
           </p>
-          <!-- Penutup paragraf tombol submit -->
+          <!-- Penutup paragraf -->
         </form>
         <!-- Penutup elemen form -->
       </section>
-      <!-- Penutup bagian konten -->
+      <!-- Penutup elemen section -->
     </main>
     <!-- Penutup elemen main -->
 
     <footer>
-      <!-- Elemen footer yang berisi informasi hak cipta atau informasi terkait lainnya -->
+      <!-- Elemen footer yang berisi informasi hak cipta atau kontak -->
       <p>&copy; 2026 SIMPUS-kecil &mdash; Jobsheet 1.</p>
-      <!-- Paragraf dengan informasi hak cipta dan nama proyek -->
+      <!-- Paragraf yang menampilkan informasi hak cipta -->
     </footer>
     <!-- Penutup elemen footer -->
   </body>
   <!-- Penutup elemen body -->
 </html>
-<!-- Penutup elemen HTML -->
+<!-- Penutup elemen html -->
 ```

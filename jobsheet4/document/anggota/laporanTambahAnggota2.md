@@ -1,115 +1,98 @@
-# LAPORAN JOBSHEET 1 index.html
+# LAPORAN JOBSHEET 4
 
 NAMA : LUCKY AKBAR FEBRIANO
 NIM : 254107020134
 KELAS : TI 2D
 
 ```html
+<!-- Deklarasi tipe dokumen HTML5 untuk memastikan browser merender halaman dengan standar terbaru. -->
 <!doctype html>
-<!-- Deklarasi tipe dokumen HTML5. -->
+<!-- Elemen root dari halaman HTML, dengan atribut lang="id" untuk menunjukkan bahasa dokumen adalah Indonesia. -->
 <html lang="id">
-  <!-- Pembuka tag html, menetapkan bahasa dokumen sebagai Indonesia. -->
+  <!-- Bagian head berisi metadata tentang dokumen, seperti judul dan link ke stylesheet. -->
   <head>
-    <!-- Pembuka tag head, berisi metadata dokumen. -->
+    <!-- Menentukan pengodean karakter UTF-8, penting untuk menampilkan berbagai karakter dengan benar. -->
     <meta charset="UTF-8" />
-    <!-- Menentukan set karakter dokumen sebagai UTF-8 untuk mendukung berbagai karakter. -->
+    <!-- Mengatur viewport untuk responsivitas, memastikan tampilan yang baik di berbagai perangkat. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Mengatur viewport untuk responsivitas di perangkat berbeda. -->
+    <!-- Menentukan judul halaman yang akan muncul di tab browser atau hasil pencarian. -->
     <title>SIMPUS-kecil || Tambah Anggota</title>
-    <!-- Menetapkan judul halaman yang muncul di tab browser. -->
+    <!-- Menghubungkan dokumen HTML dengan file stylesheet eksternal untuk mengatur tampilan visual. -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <!-- kode ini akan memuat dan menerapkan gaya-gaya yang didefinisikan dalam file style.css ke halaman web -->
   </head>
-  <!-- Penutup tag head. -->
+  <!-- Bagian body berisi konten aktual dari halaman web yang terlihat oleh pengguna. -->
   <body>
-    <!-- Pembuka tag body, berisi konten yang terlihat oleh pengguna. -->
+    <!-- Elemen header mewakili bagian pengantar atau navigasi dari sebuah dokumen atau section. -->
     <header>
-      <!-- Pembuka tag header, menandai bagian atas halaman atau bagian pengantar. -->
+      <!-- Judul utama atau nama aplikasi yang ditampilkan di header. -->
       <h1>SIMPUS-kecil</h1>
-      <!-- Judul utama halaman atau aplikasi. -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle"> <!-- Membuat checkbox tersembunyi yang berfungsi sebagai pengontrol untuk membuka/menutup navigasi. -->
-      <label for="nav-toggle" class="nav-toggle-label">&#9776</label> <!-- Membuat label yang terhubung dengan checkbox, berfungsi sebagai ikon hamburger menu yang dapat diklik untuk mengaktifkan/menonaktifkan navigasi. -->
+      <!-- Elemen nav digunakan untuk menampung link navigasi utama. -->
       <nav>
-        <!-- Pembuka tag nav, berisi tautan navigasi. -->
+        <!-- Daftar tak berurutan (unordered list) untuk menampung item-item navigasi. -->
         <ul>
-          <!-- Pembuka tag ul, membuat daftar tidak terurut untuk item navigasi. -->
+          <!-- Item daftar navigasi yang mengarah ke halaman beranda. -->
           <li><a href="../index.html">Home</a></li>
-          <!-- Item daftar dan tautan ke halaman utama. -->
+          <!-- Item daftar navigasi yang mengarah ke daftar buku. -->
           <li><a href="../buku/list.html">Daftar Buku</a></li>
-          <!-- Item daftar dan tautan ke halaman daftar buku. -->
+          <!-- Item daftar navigasi yang mengarah ke daftar anggota. -->
           <li><a href="list.html">Daftar Anggota</a></li>
-          <!-- Item daftar dan tautan ke halaman daftar anggota. -->
+          <!-- Item daftar navigasi yang mengarah ke halaman tambah anggota. -->
           <li><a href="tambah.html">Tambah Anggota</a></li>
-          <!-- Item daftar dan tautan ke halaman tambah anggota. -->
         </ul>
-        <!-- Penutup tag ul. -->
       </nav>
-      <!-- Penutup tag nav. -->
     </header>
-    <!-- Penutup tag header. -->
 
+    <!-- Elemen main mewakili konten utama dari dokumen. -->
     <main>
-      <!-- Pembuka tag main, berisi konten utama dan unik dari halaman. -->
+      <!-- Elemen section digunakan untuk mengelompokkan konten yang berhubungan. -->
       <section>
-        <!-- Pembuka tag section, mengelompokkan konten yang berhubungan secara tematis. -->
+        <!-- Judul section yang menjelaskan fungsi halaman ini. -->
         <h2>Tambah Anggota</h2>
-        <!-- Judul sub-bagian untuk formulir tambah anggota. -->
+        <!-- Elemen form digunakan untuk membuat formulir interaktif. -->
         <form>
-          <!-- Pembuka tag form, membuat formulir untuk input pengguna. -->
+          <!-- Elemen p untuk paragraf, digunakan di sini untuk mengelompokkan label dan input. -->
           <p>
-            <!-- Pembuka tag p, membuat paragraf untuk mengelompokkan label dan input. -->
+            <!-- Label untuk input nama, terhubung ke input dengan atribut for="nama". -->
             <label for="nama">Nama:</label>
-            <!-- Label untuk input nama, terhubung ke input dengan id "nama". -->
+            <!-- Input teks untuk memasukkan nama, dengan id unik dan wajib diisi. -->
             <input type="text" id="nama" name="nama" required />
-            <!-- Input teks untuk nama, wajib diisi. -->
           </p>
-          <!-- Penutup tag p. -->
+          <!-- Elemen p untuk paragraf, digunakan di sini untuk mengelompokkan label dan input. -->
           <p>
-            <!-- Pembuka tag p, membuat paragraf untuk mengelompokkan label dan input. -->
+            <!-- Label untuk input nomor anggota, terhubung ke input dengan atribut for="no-anggota". -->
             <label for="no-anggota">No Anggota:</label>
-            <!-- Label untuk input nomor anggota, terhubung ke input dengan id "no-anggota". -->
+            <!-- Input teks untuk memasukkan nomor anggota, dengan id unik dan wajib diisi. -->
             <input type="text" id="no-anggota" name="no-anggota" required />
-            <!-- Input teks untuk nomor anggota, wajib diisi. -->
           </p>
-          <!-- Penutup tag p. -->
 
+          <!-- Elemen p untuk paragraf, digunakan di sini untuk mengelompokkan label dan input. -->
           <p>
-            <!-- Pembuka tag p, membuat paragraf untuk mengelompokkan label dan input. -->
+            <!-- Label untuk input alamat, terhubung ke input dengan atribut for="alamat". -->
             <label for="alamat">Alamat:</label>
-            <!-- Label untuk input alamat, terhubung ke input dengan id "alamat". -->
+            <!-- Input teks untuk memasukkan alamat, dengan id unik dan wajib diisi. -->
             <input type="text" id="alamat" name="alamat" required />
-            <!-- Input teks untuk alamat, wajib diisi. -->
           </p>
-          <!-- Penutup tag p. -->
+          <!-- Elemen p untuk paragraf, digunakan di sini untuk mengelompokkan label dan input. -->
           <p>
-            <!-- Pembuka tag p, membuat paragraf untuk mengelompokkan label dan input. -->
+            <!-- Label untuk input nomor HP, terhubung ke input dengan atribut for="no-hp". -->
             <label for="no-hp">No HP:</label>
-            <!-- Label untuk input nomor HP, terhubung ke input dengan id "no-hp". -->
+            <!-- Input telepon untuk memasukkan nomor HP, dengan id unik dan wajib diisi. -->
             <input type="tel" id="no-hp" name="no-hp" required />
-            <!-- Input telepon untuk nomor HP, wajib diisi. -->
           </p>
-          <!-- Penutup tag p. -->
+          <!-- Elemen p untuk paragraf, digunakan di sini untuk mengelompokkan tombol. -->
           <p>
-            <!-- Pembuka tag p, membuat paragraf untuk mengelompokkan tombol. -->
+            <!-- Tombol untuk mengirimkan (submit) data formulir. -->
             <button type="submit">Simpan</button>
-            <!-- Tombol untuk mengirimkan formulir. -->
           </p>
-          <!-- Penutup tag p. -->
         </form>
-        <!-- Penutup tag form. -->
       </section>
-      <!-- Penutup tag section. -->
     </main>
-    <!-- Penutup tag main. -->
 
+    <!-- Elemen footer mewakili bagian bawah halaman, biasanya berisi informasi hak cipta. -->
     <footer>
-      <!-- Pembuka tag footer, berisi informasi hak cipta atau informasi tambahan. -->
+      <!-- Paragraf yang menampilkan informasi hak cipta dan nama proyek. -->
       <p>&copy; 2026 SIMPUS-kecil &mdash; Jobsheet 1.</p>
-      <!-- Paragraf berisi informasi hak cipta dan nama proyek. -->
     </footer>
-    <!-- Penutup tag footer. -->
   </body>
-  <!-- Penutup tag body. -->
 </html>
-<!-- Penutup tag html. -->
 ```
