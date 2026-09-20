@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #f3f0fa;
+  background-color: #0a0a0f;
+  line-height: 1.5;
+}
+
+a {
+  color: #a78bfa;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.back-to-menu {
+  display: inline-block;
+  margin: 1rem 1.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+header {
+  background-color: #17141f;
+  border-bottom: 1px solid #2a2140;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  color: #a855f7;
+}
+
+.nav-toggle-label {
+  display: none;
+  font-size: 1.6rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+}
+
+header nav a {
+  color: #f3f0fa;
+  font-weight: 500;
+}
+
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  background-color: #17141f;
+  border: 1px solid #2a2140;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  color: #a855f7;
+}
+
+main section:nth-of-type(2) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+main section:nth-of-type(2) article {
+  background-color: #1f1a2b;
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+main section:nth-of-type(2) h2 {
+  grid-column: 1 / -1;
+}
+
+main section:nth-of-type(2) article h3 {
+  font-size: 0.95rem;
+  color: #b6aecb;
+  margin-bottom: 0.5rem;
+}
+
+main section:nth-of-type(2) article p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #a855f7;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid #2a2140;
+}
+
+thead {
+  background-color: #2a2140;
+  color: #f3f0fa;
+}
+
+tbody tr:hover {
+  background-color: #1f1a2b;
+}
+
+td button {
+  padding: 0.35rem 0.7rem;
+  margin-right: 0.35rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+td button:first-of-type {
+  background-color: #f0ad4e;
+  color: #fff;
+}
+
+td button.btn-hapus {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+form p {
+  margin-bottom: 1rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: #b6aecb;
+}
+
+form input,
+form select {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #2a2140;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #1f1a2b;
+  color: #f3f0fa;
+}
+
+form button[type="submit"] {
+  background-color: #9333ea;
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+  background-color: #7e22ce;
+}
+
+.search-box {
+  margin-bottom: 1rem;
+}
+
+.search-box input {
+  width: 100%;
+  max-width: 320px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #2a2140;
+  border-radius: 4px;
+  background-color: #1f1a2b;
+  color: #f3f0fa;
+}
+
+.flash {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.flash-success {
+  background-color: #14532d;
+  color: #bbf7d0;
+}
+
+.flash-error {
+  background-color: #7f1d1d;
+  color: #fecaca;
+}
+
+.error {
+  display: block;
+  color: #fca5a5;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+footer {
+  text-align: center;
+  color: #b6aecb;
+  padding: 1.25rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  main section:nth-of-type(2) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    position: relative;
+  }
+
+  .nav-toggle-label {
+    display: block;
+  }
+
+  header nav {
+    display: none;
+    width: 100%;
+    order: 3;
+    margin-top: 1rem;
+  }
+
+  header nav.nav-open {
+    display: block;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  main section:nth-of-type(2) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.back-to-menu {
+  display: inline-block;
+  margin: 1rem 1.5rem 0;
+  color: #a78bfa;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.back-to-menu:hover {
+  text-decoration: underline;
+}

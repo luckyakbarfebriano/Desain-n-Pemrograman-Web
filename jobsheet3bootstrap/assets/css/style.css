@@ -14,3 +14,14 @@ form button[type="submit"]:hover,
 button[type="submit"]:hover {
   background-color: #164869 !important;
 }
+.back-to-menu {
+  display: inline-block;
+  margin: 1rem 1.5rem 0;
+  color: #a78bfa;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.back-to-menu:hover {
+  text-decoration: underline;
+}
