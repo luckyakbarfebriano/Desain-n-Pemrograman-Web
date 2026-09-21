@@ -1,4 +1,6 @@
+<?php
 // Front controller: meneruskan setiap request ke file PHP yang diminta.
+$path = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));// Front controller: meneruskan setiap request ke file PHP yang diminta.
 $path = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
  
 if ($path === '/' || $path === '') {
