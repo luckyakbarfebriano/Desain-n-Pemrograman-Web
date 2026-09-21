@@ -15,7 +15,7 @@ $base = $__rel === '' ? '' : str_repeat('../', substr_count($__rel, '/') + 1);
     <link rel="stylesheet" href="<?php echo $base; ?>assets/css/style.css">
 </head>
 <body>
-    <a href="<?php echo $base; ?>../index.html" class="back-to-menu">&larr; Kembali ke Menu</a>
+    <a href="https://desain-n-pemrograman-web-vercel.vercel.app/" class="back-to-menu">← Kembali ke Menu</a>
     <header>
         <h1>WE GO GYM</h1>
         <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>

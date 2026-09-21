@@ -1,10 +1,12 @@
 <?php
 $page_title = "Daftar Kelas";
 include __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../includes/koneksi.php';
 
 $flash = $_SESSION['flash'] ?? null;
 unset($_SESSION['flash']);
-$daftarKelas = $_SESSION['kelas'] ?? [];
+
+$daftarKelas = $pdo->query("SELECT * FROM kelas ORDER BY id ASC")->fetchAll(PDO::FETCH_ASSOC);
 ?>
         <section>
             <h2>Daftar Kelas</h2>
