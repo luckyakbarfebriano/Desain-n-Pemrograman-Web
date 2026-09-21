@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WE GO GYM || Tambah Anggota</title>
+    <title>WE GO GYM || Tambah Kelas</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
@@ -21,32 +21,44 @@
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
-          <li><a href="../kelas/list.html">Daftar Kelas</a></li>
-          <li><a href="list.html">Daftar Anggota</a></li>
-          <li><a href="tambah.html">Tambah Anggota</a></li>
+          <li><a href="list.html">Daftar Kelas</a></li>
+          <li><a href="tambah.html" class="active">Tambah Kelas</a></li>
+          <li><a href="../anggota/list.html">Daftar Anggota</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
       <section>
-        <h2>Tambah Anggota</h2>
+        <h2>Tambah Kelas</h2>
         <form id="form-tambah">
           <p>
-            <label for="nama">Nama:</label>
-            <input type="text" id="nama" name="nama" required />
+            <label for="nama_kelas">Nama Kelas:</label>
+            <input type="text" id="nama_kelas" name="nama_kelas" required />
           </p>
           <p>
-            <label for="no-anggota">No Anggota:</label>
-            <input type="text" id="no-anggota" name="no-anggota" required />
+            <label for="instruktur">Instruktur:</label>
+            <input type="text" id="instruktur" name="instruktur" required />
           </p>
           <p>
-            <label for="alamat">Alamat:</label>
-            <input type="text" id="alamat" name="alamat" required />
+            <label for="jadwal">Jadwal:</label>
+            <input
+              type="text"
+              id="jadwal"
+              name="jadwal"
+              placeholder="cth: Senin & Rabu, 07:00"
+              required
+            />
           </p>
           <p>
-            <label for="no-hp">No HP:</label>
-            <input type="tel" id="no-hp" name="no-hp" required />
+            <label for="kapasitas">Kapasitas:</label>
+            <input
+              type="number"
+              id="kapasitas"
+              name="kapasitas"
+              min="0"
+              required
+            />
           </p>
           <p>
             <button type="submit">Simpan</button>

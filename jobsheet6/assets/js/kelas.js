@@ -1,4 +1,4 @@
-async function muatDaftarBuku() {
+async function muatDaftarKelas() {
   const tbody = document.querySelector(".table-responsive table tbody");
   const loading = document.getElementById("loading-indicator");
   if (!tbody) return;
@@ -9,26 +9,26 @@ async function muatDaftarBuku() {
   try {
     await new Promise((resolve) => setTimeout(resolve, 600));
 
-    const res = await fetch("../data/buku.json");
+    const res = await fetch("../data/kelas.json");
     if (!res.ok) {
       throw new Error("Gagal mengambil data (status " + res.status + ")");
     }
-    const daftarBuku = await res.json();
+    const daftarKelas = await res.json();
 
-    daftarBuku.forEach(function (buku) {
+    daftarKelas.forEach(function (kelas) {
       const tr = document.createElement("tr");
       tr.innerHTML =
         "<td>" +
-        buku.judul +
+        kelas.nama_kelas +
         "</td>" +
         "<td>" +
-        buku.pengarang +
+        kelas.instruktur +
         "</td>" +
         "<td>" +
-        buku.tahun +
+        kelas.jadwal +
         "</td>" +
         "<td>" +
-        buku.stok +
+        kelas.kapasitas +
         "</td>" +
         "<td>" +
         '<button type="button">Edit</button> ' +
@@ -44,4 +44,4 @@ async function muatDaftarBuku() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", muatDaftarBuku);
+document.addEventListener("DOMContentLoaded", muatDaftarKelas);

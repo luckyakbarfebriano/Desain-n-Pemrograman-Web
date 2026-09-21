@@ -6,21 +6,21 @@ $__scriptDir = dirname($_SERVER['SCRIPT_FILENAME']);
 $__rel = ltrim(str_replace('\\', '/', substr($__scriptDir, strlen($__jobsheetRoot))), '/');
 $base = $__rel === '' ? '' : str_repeat('../', substr_count($__rel, '/') + 1);
 
-if (!isset($_SESSION['buku'])) {
-    $_SESSION['buku'] = [
-        ['judul' => 'The Psycology of Money', 'pengarang' => 'Morgan Housel', 'tahun' => 2020, 'stok' => 5],
-        ['judul' => 'Crypto Trading Guide', 'pengarang' => 'Timothy Ronald, Kalimasada', 'tahun' => 2023, 'stok' => 3],
-        ['judul' => 'The Richest Man in Babylon', 'pengarang' => 'George Samuel Clason', 'tahun' => 1926, 'stok' => 10],
-        ['judul' => 'Laskar Pelangi', 'pengarang' => 'Andrea Hirata', 'tahun' => 2005, 'stok' => 4],
-        ['judul' => 'Bumi Manusia', 'pengarang' => 'Pramoedya Ananta Toer', 'tahun' => 1980, 'stok' => 2],
-        ['judul' => 'Negeri 5 Menara', 'pengarang' => 'Ahmad Fuadi', 'tahun' => 2009, 'stok' => 0],
-        ['judul' => 'Atomic Habits', 'pengarang' => 'James Clear', 'tahun' => 2018, 'stok' => 7],
-        ['judul' => 'Filosofi Teras', 'pengarang' => 'Henry Manampiring', 'tahun' => 2018, 'stok' => 5],
-        ['judul' => "Harry Potter and the Philosopher's Stone", 'pengarang' => 'J.K. Rowling', 'tahun' => 1997, 'stok' => 6],
-        ['judul' => '1984', 'pengarang' => 'George Orwell', 'tahun' => 1949, 'stok' => 8],
-        ['judul' => 'To Kill a Mockingbird', 'pengarang' => 'Harper Lee', 'tahun' => 1960, 'stok' => 4],
-        ['judul' => 'Sapiens: A Brief History of Humankind', 'pengarang' => 'Yuval Noah Harari', 'tahun' => 2011, 'stok' => 6],
-        ['judul' => 'The Alchemist', 'pengarang' => 'Paulo Coelho', 'tahun' => 1988, 'stok' => 9],
+if (!isset($_SESSION['kelas'])) {
+    $_SESSION['kelas'] = [
+        ['nama_kelas' => 'Yoga Pagi', 'instruktur' => 'Rina Wijaya', 'jadwal' => 'Senin & Rabu, 06:00', 'kapasitas' => 15],
+        ['nama_kelas' => 'Zumba Party', 'instruktur' => 'Dimas Prakoso', 'jadwal' => 'Selasa & Kamis, 17:00', 'kapasitas' => 20],
+        ['nama_kelas' => 'HIIT Blast', 'instruktur' => 'Bagus Setiawan', 'jadwal' => 'Senin, Rabu, Jumat, 18:00', 'kapasitas' => 12],
+        ['nama_kelas' => 'Muay Thai Basic', 'instruktur' => 'Chalermchai Boon', 'jadwal' => 'Selasa & Kamis, 19:00', 'kapasitas' => 10],
+        ['nama_kelas' => 'CrossFit WOD', 'instruktur' => 'Farhan Maulana', 'jadwal' => 'Senin-Jumat, 06:30', 'kapasitas' => 8],
+        ['nama_kelas' => 'Pilates Reformer', 'instruktur' => 'Sarah Amelia', 'jadwal' => 'Rabu & Jumat, 09:00', 'kapasitas' => 10],
+        ['nama_kelas' => 'Boxing Fundamentals', 'instruktur' => 'Rocky Pratama', 'jadwal' => 'Selasa & Kamis, 20:00', 'kapasitas' => 12],
+        ['nama_kelas' => 'Spin Cycle', 'instruktur' => 'Nadia Kusuma', 'jadwal' => 'Senin & Rabu, 07:00', 'kapasitas' => 18],
+        ['nama_kelas' => 'Body Combat', 'instruktur' => 'Yoga Saputra', 'jadwal' => 'Sabtu, 08:00', 'kapasitas' => 20],
+        ['nama_kelas' => 'Aerobik Ceria', 'instruktur' => 'Wulan Sari', 'jadwal' => 'Senin, Rabu, Jumat, 08:00', 'kapasitas' => 25],
+        ['nama_kelas' => 'Calisthenics Skill', 'instruktur' => 'Reza Firmansyah', 'jadwal' => 'Selasa & Kamis, 16:00', 'kapasitas' => 10],
+        ['nama_kelas' => 'Powerlifting Club', 'instruktur' => 'Anton Wijaksono', 'jadwal' => 'Senin & Kamis, 19:30', 'kapasitas' => 6],
+        ['nama_kelas' => 'Aqua Fitness', 'instruktur' => 'Melati Putri', 'jadwal' => 'Sabtu & Minggu, 09:00', 'kapasitas' => 15],
     ];
 }
 
@@ -44,19 +44,19 @@ if (!isset($_SESSION['anggota'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIMPUS-kecil<?php echo isset($page_title) ? ' | ' . $page_title : ''; ?></title>
+    <title>WE GO GYM<?php echo isset($page_title) ? ' | ' . $page_title : ''; ?></title>
     <link rel="stylesheet" href="<?php echo $base; ?>assets/css/style.css">
 </head>
 <body>
     <a href="<?php echo $base; ?>../index.html" class="back-to-menu">&larr; Kembali ke Menu</a>
     <header>
-        <h1>SIMPUS-kecil</h1>
+        <h1>WE GO GYM</h1>
         <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
         <nav>
             <ul>
                 <li><a href="<?php echo $base; ?>index.php">Beranda</a></li>
-                <li><a href="<?php echo $base; ?>buku/list.php">Daftar Buku</a></li>
-                <li><a href="<?php echo $base; ?>buku/tambah.php">Tambah Buku</a></li>
+                <li><a href="<?php echo $base; ?>kelas/list.php">Daftar Kelas</a></li>
+                <li><a href="<?php echo $base; ?>kelas/tambah.php">Tambah Kelas</a></li>
                 <li><a href="<?php echo $base; ?>anggota/list.php">Daftar Anggota</a></li>
                 <li><a href="<?php echo $base; ?>anggota/tambah.php">Tambah Anggota</a></li>
             </ul>
