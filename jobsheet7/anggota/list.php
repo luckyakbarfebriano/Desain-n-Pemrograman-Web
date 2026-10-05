@@ -1,12 +1,10 @@
 <?php
 $page_title = "Daftar Anggota";
 include __DIR__ . '/../includes/header.php';
-require __DIR__ . '/../includes/koneksi.php';
 
 $flash = $_SESSION['flash'] ?? null;
 unset($_SESSION['flash']);
-
-$daftarAnggota = $pdo->query("SELECT * FROM anggota ORDER BY id ASC")->fetchAll(PDO::FETCH_ASSOC);
+$daftarAnggota = $_SESSION['anggota'] ?? [];
 ?>
         <section>
             <h2>Daftar Anggota</h2>
@@ -32,18 +30,24 @@ $daftarAnggota = $pdo->query("SELECT * FROM anggota ORDER BY id ASC")->fetchAll(
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($daftarAnggota as $anggota): ?>
+                    <?php if (empty($daftarAnggota)): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($anggota['no_anggota']); ?></td>
-                        <td><?php echo htmlspecialchars($anggota['nama']); ?></td>
-                        <td><?php echo htmlspecialchars($anggota['alamat']); ?></td>
-                        <td><?php echo htmlspecialchars($anggota['no_hp']); ?></td>
-                        <td>
-                            <button type="button">Edit</button>
-                            <button type="button" class="btn-hapus">Hapus</button>
-                        </td>
+                        <td colspan="5">Belum ada data anggota. Silakan tambah lewat menu "Tambah Anggota".</td>
                     </tr>
-                    <?php endforeach; ?>
+                    <?php else: ?>
+                        <?php foreach ($daftarAnggota as $anggota): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($anggota['no_anggota']); ?></td>
+                            <td><?php echo htmlspecialchars($anggota['nama']); ?></td>
+                            <td><?php echo htmlspecialchars($anggota['alamat']); ?></td>
+                            <td><?php echo htmlspecialchars($anggota['no_hp']); ?></td>
+                            <td>
+                                <button type="button">Edit</button>
+                                <button type="button" class="btn-hapus">Hapus</button>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
             </div>

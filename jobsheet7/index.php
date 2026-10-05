@@ -1,10 +1,9 @@
 <?php
 $page_title = "Beranda";
 include __DIR__ . '/includes/header.php';
-require __DIR__ . '/includes/koneksi.php';
 
-$totalKelas = $pdo->query("SELECT COUNT(*) FROM kelas")->fetchColumn();
-$totalAnggota = $pdo->query("SELECT COUNT(*) FROM anggota")->fetchColumn();
+$totalKelas = count($_SESSION['kelas'] ?? []);
+$totalAnggota = count($_SESSION['anggota'] ?? []);
 ?>
         <section>
             <h2>Selamat Datang di WE GO GYM</h2>
