@@ -19,32 +19,43 @@ $base = $__rel === '' ? '' : str_repeat('../', substr_count($__rel, '/') + 1);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WE GO GYM<?php echo isset($page_title) ? ' | ' . $page_title : ''; ?></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo $base; ?>assets/css/style.css">
 </head>
 <body>
-    <a href="https://desain-n-pemrograman-web-vercel.vercel.app/" class="back-to-menu">← Kembali ke Menu</a>
-    <header>
-        <h1>WE GO GYM</h1>
-        <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
-        <nav>
-            <ul>
-                <li><a href="<?php echo $base; ?>index.php">Beranda</a></li>
-                <li><a href="<?php echo $base; ?>kelas/list.php">Daftar Kelas</a></li>
+    <div class="shell">
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <span class="brand-mark">🏋️</span>
+                <span class="brand-name">WE GO GYM</span>
+            </div>
+            <nav class="side-nav">
+                <a href="<?php echo $base; ?>index.php" class="nav-item<?php echo (strpos($_SERVER['REQUEST_URI'], '/index.php') !== false) ? ' active' : ''; ?>"><span class="nav-icon">🏠</span><span>Beranda</span></a>
+                <a href="<?php echo $base; ?>kelas/list.php" class="nav-item<?php echo (strpos($_SERVER['REQUEST_URI'], '/kelas/list.php') !== false) ? ' active' : ''; ?>"><span class="nav-icon">🏋️</span><span>Daftar Kelas</span></a>
                 <?php if ($sudahLogin): ?>
-                <li><a href="<?php echo $base; ?>kelas/tambah.php">Tambah Kelas</a></li>
-                <li><a href="<?php echo $base; ?>anggota/list.php">Daftar Anggota</a></li>
-                <li><a href="<?php echo $base; ?>anggota/tambah.php">Tambah Anggota</a></li>
+                <a href="<?php echo $base; ?>kelas/tambah.php" class="nav-item<?php echo (strpos($_SERVER['REQUEST_URI'], '/kelas/tambah.php') !== false) ? ' active' : ''; ?>"><span class="nav-icon">➕</span><span>Tambah Kelas</span></a>
+                <a href="<?php echo $base; ?>anggota/list.php" class="nav-item<?php echo (strpos($_SERVER['REQUEST_URI'], '/anggota/list.php') !== false) ? ' active' : ''; ?>"><span class="nav-icon">👥</span><span>Daftar Anggota</span></a>
+                <a href="<?php echo $base; ?>anggota/tambah.php" class="nav-item<?php echo (strpos($_SERVER['REQUEST_URI'], '/anggota/tambah.php') !== false) ? ' active' : ''; ?>"><span class="nav-icon">➕</span><span>Tambah Anggota</span></a>
                 <?php endif; ?>
-            </ul>
-        </nav>
-        <div class="auth-status">
-            <?php if ($sudahLogin): ?>
-                <span><?php echo $_SESSION['nama']; ?></span>
-                <a href="<?php echo $base; ?>auth/logout.php">Logout</a>
-            <?php else: ?>
-                <a href="<?php echo $base; ?>auth/login.php">Login</a>
-            <?php endif; ?>
-        </div>
-    </header>
-
-    <main>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="https://desain-n-pemrograman-web-vercel.vercel.app/" class="back-to-menu">&larr; Kembali ke Menu</a>
+            </div>
+        </aside>
+        <div class="content-area">
+            <div class="topbar">
+                <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
+                <div class="topbar-title"><?php echo isset($page_title) ? $page_title : 'Beranda'; ?></div>
+                <div class="topbar-user">
+                    <?php if ($sudahLogin): ?>
+                        <span><?php echo $_SESSION['nama']; ?></span>
+                        <a href="<?php echo $base; ?>auth/logout.php">Logout</a>
+                    <?php else: ?>
+                        <a href="<?php echo $base; ?>auth/login.php">Login</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <main class="dashboard-main">
