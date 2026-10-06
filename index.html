@@ -18,14 +18,13 @@
 
     <style>
       :root {
-        --bg: #0b0b10;
-        --text: #f3f0fa;
-        --muted: #b6aecb;
-        --accent: #a855f7;
-        --accent-soft: #a78bfa;
-        --glass: rgba(255, 255, 255, 0.06);
-        --stroke: rgba(255, 255, 255, 0.16);
-        --gap: 1.25rem;
+        --bg: #f8fafc; /* Slate 50 */
+        --text: #1e293b; /* Slate 800 */
+        --muted: #64748b; /* Slate 500 */
+        --accent: #3b82f6; /* Blue 500 */
+        --accent-soft: #93c5fd; /* Blue 300 */
+        --glass: rgba(255, 255, 255, 0.85);
+        --stroke: rgba(0, 0, 0, 0.08);
       }
 
       * {
@@ -50,24 +49,23 @@
         background:
           radial-gradient(
             1100px 520px at 50% -8%,
-            rgba(168, 85, 247, 0.16),
+            rgba(59, 130, 246, 0.12),
             transparent 62%
           ),
           var(--bg);
         min-height: 100vh;
         line-height: 1.5;
         position: relative;
-        overflow-x: hidden;
       }
 
-      /* Bentuk geometri tipis di latar belakang */
+      /* Dekorasi Latar Belakang */
       body::before,
       body::after {
         content: "";
         position: fixed;
         pointer-events: none;
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        z-index: 0;
+        border: 1px solid rgba(59, 130, 246, 0.1);
+        z-index: -1;
       }
       body::before {
         width: 520px;
@@ -85,15 +83,7 @@
         transform: rotate(18deg);
       }
 
-      .topbar,
-      .hero,
-      .showcase,
-      footer {
-        position: relative;
-        z-index: 1;
-      }
-
-      /* ===== Bar atas: navigasi + kartu profil ===== */
+      /* ===== Bar Navigasi ===== */
       .topbar {
         display: grid;
         grid-template-columns: 1fr auto 1fr;
@@ -110,25 +100,24 @@
         border-radius: 999px;
         background: var(--glass);
         border: 1px solid var(--stroke);
-        -webkit-backdrop-filter: blur(14px);
         backdrop-filter: blur(14px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
       }
 
       .nav a {
         color: var(--muted);
         text-decoration: none;
         font-size: 0.92rem;
+        font-weight: 500;
         padding: 0.5rem 1.1rem;
         border-radius: 999px;
-        transition:
-          background-color 0.2s ease,
-          color 0.2s ease;
+        transition: 0.2s ease;
       }
 
       .nav a:hover,
       .nav a[aria-current="page"] {
-        color: var(--text);
-        background: rgba(255, 255, 255, 0.11);
+        color: var(--accent);
+        background: rgba(59, 130, 246, 0.1);
       }
 
       .profile {
@@ -141,24 +130,20 @@
         border-radius: 14px;
         background: var(--glass);
         border: 1px solid var(--stroke);
-        -webkit-backdrop-filter: blur(14px);
         backdrop-filter: blur(14px);
         text-align: right;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
       }
 
       .profile-name {
         font-size: 0.85rem;
         font-weight: 600;
-        line-height: 1.3;
+        color: var(--text);
       }
-
       .profile-detail {
         font-size: 0.78rem;
         color: var(--muted);
-        line-height: 1.3;
       }
-
-      /* Ganti dengan <img> kalau ingin memakai foto */
       .avatar {
         width: 38px;
         height: 38px;
@@ -167,239 +152,136 @@
         place-items: center;
         font-size: 0.82rem;
         font-weight: 600;
-        background: linear-gradient(135deg, var(--accent), #7e22ce);
+        background: linear-gradient(135deg, var(--accent), #1d4ed8);
         color: #fff;
-        flex-shrink: 0;
+        box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
       }
 
-      /* ===== Judul ===== */
+      /* ===== Judul Utama ===== */
       .hero {
         text-align: center;
-        padding: clamp(2rem, 6vw, 4.25rem) 1rem clamp(1.75rem, 4vw, 2.75rem);
+        padding: 2rem 1rem 3rem;
       }
-
       .hero h1 {
-        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+        font-family: "Playfair Display", serif;
         font-weight: 800;
         text-transform: uppercase;
-        font-size: clamp(2.1rem, 6.5vw, 4.6rem);
-        line-height: 1.06;
-        letter-spacing: 0.01em;
-        text-shadow:
-          0 0 26px rgba(168, 85, 247, 0.4),
-          0 2px 0 rgba(0, 0, 0, 0.35);
-      }
-
-      .hero p {
-        margin-top: 1rem;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      /* ===== Carousel ===== */
-      .showcase {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 clamp(1rem, 4vw, 3rem) 3.5rem;
-      }
-
-      .stage {
-        position: relative;
-        padding: 1.5rem 3.5rem;
-        border-radius: 22px;
-        background: var(--glass);
-        border: 1px solid var(--stroke);
-        -webkit-backdrop-filter: blur(12px);
-        backdrop-filter: blur(12px);
-      }
-
-      .arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        border: 1px solid var(--stroke);
-        background: rgba(255, 255, 255, 0.08);
+        font-size: clamp(1.8rem, 5vw, 3.5rem);
+        line-height: 1.1;
         color: var(--text);
-        font-size: 1.1rem;
-        line-height: 1;
-        cursor: pointer;
-        display: grid;
-        place-items: center;
-        transition:
-          background-color 0.2s ease,
-          opacity 0.2s ease;
-        z-index: 2;
       }
-      .arrow:hover:not(:disabled) {
-        background: rgba(255, 255, 255, 0.18);
-      }
-      .arrow:disabled {
-        opacity: 0.3;
-        cursor: default;
-      }
-      .arrow.prev {
-        left: 0.9rem;
-      }
-      .arrow.next {
-        right: 0.9rem;
+      .hero p {
+        margin-top: 0.75rem;
+        color: var(--muted);
+        font-weight: 500;
       }
 
-      .track {
-        display: flex;
-        gap: var(--gap);
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scroll-padding-inline: 1rem;
-        scroll-behavior: smooth;
-        padding: 0.75rem 1rem 1.5rem;
-        scrollbar-width: none;
+      /* ===== List Jobsheet Sederhana ===== */
+      .showcase {
+        max-width: 800px; /* Lebar dibatasi agar list rapi di tengah */
+        margin: 0 auto;
+        padding: 0 1rem 4rem;
       }
-      .track::-webkit-scrollbar {
-        display: none;
+
+      .jobsheet-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Jarak antar list */
       }
 
       .card {
-        position: relative;
-        overflow: hidden;
-        flex: 0 0 calc((100% - 2 * var(--gap)) / 3);
-        scroll-snap-align: start;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        /* Layout Grid: Kotak Angka | Teks | Tombol */
+        grid-template-columns: 80px 1fr auto;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+          "thumb title btn"
+          "thumb desc btn";
+        gap: 0.2rem 1.25rem;
         align-items: center;
-        text-align: center;
-        padding: 1rem 1rem 1.25rem;
-        border-radius: 20px;
-        background: linear-gradient(
-          160deg,
-          rgba(255, 255, 255, 0.17),
-          rgba(255, 255, 255, 0.05) 42%,
-          rgba(255, 255, 255, 0.09)
-        );
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        box-shadow:
-          inset 0 1px 0 rgba(255, 255, 255, 0.35),
-          0 6px 14px rgba(0, 0, 0, 0.3);
-        transition: transform 0.25s ease;
-      }
-
-      /* Kilau diagonal seperti kaca */
-      .card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: linear-gradient(
-          115deg,
-          transparent 56%,
-          rgba(255, 255, 255, 0.1) 56%,
-          transparent 76%
-        );
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 1.25rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
       }
 
       .card:hover {
-        transform: translateY(-4px);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
       }
 
+      /* Kotak Angka (Thumbnail) */
       .thumb {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 16 / 10;
-        margin-bottom: 0.95rem;
+        grid-area: thumb;
+        width: 80px;
+        height: 80px;
         border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: linear-gradient(145deg, #1c1928, #0f0d16);
-        display: grid;
-        place-items: center;
-        overflow: hidden;
-      }
-
-      .thumb-bar {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 16px;
+        background: linear-gradient(145deg, #eff6ff, #dbeafe);
+        border: 1px solid #e2e8f0;
         display: flex;
         align-items: center;
-        gap: 4px;
-        padding-left: 8px;
-        background: rgba(255, 255, 255, 0.06);
-      }
-      .thumb-bar i {
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.35);
+        justify-content: center;
+        position: relative;
       }
 
       .thumb-num {
-        font-family: "Playfair Display", Georgia, serif;
+        font-family: "Playfair Display", serif;
         font-weight: 800;
-        font-size: clamp(2rem, 4vw, 2.7rem);
-        color: rgba(255, 255, 255, 0.92);
-        text-shadow: 0 0 18px rgba(168, 85, 247, 0.55);
-        margin-top: 8px;
+        font-size: 2rem;
+        color: var(--accent);
       }
 
       .tag {
         position: absolute;
-        right: 8px;
-        bottom: 8px;
-        padding: 0.12rem 0.55rem;
-        border-radius: 999px;
-        font-size: 0.68rem;
+        bottom: -6px;
+        font-size: 0.65rem;
         font-weight: 600;
         color: #fff;
-        background: rgba(168, 85, 247, 0.55);
-        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: var(--accent);
+        padding: 0.15rem 0.5rem;
+        border-radius: 999px;
+        white-space: nowrap;
+        box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
       }
 
+      /* Info Teks */
       .card-title {
-        font-size: 0.95rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
-        line-height: 1.3;
-        margin-bottom: 0.4rem;
+        grid-area: title;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--text);
+        align-self: end;
       }
 
       .card-desc {
-        font-size: 0.84rem;
+        grid-area: desc;
+        font-size: 0.88rem;
         color: var(--muted);
-        line-height: 1.45;
-        margin-bottom: 1rem;
+        align-self: start;
       }
 
+      /* Tombol */
       .btn {
-        margin-top: auto;
+        grid-area: btn;
         display: inline-block;
-        padding: 0.48rem 1.2rem;
+        padding: 0.5rem 1.5rem;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.85);
-        color: #14121b;
-        font-size: 0.82rem;
+        background: var(--accent);
+        color: #ffffff;
+        font-size: 0.85rem;
         font-weight: 600;
         text-decoration: none;
-        transition:
-          background-color 0.2s ease,
-          color 0.2s ease;
+        transition: 0.2s ease;
       }
       .btn:hover {
-        background: var(--accent);
-        color: #fff;
+        background: #2563eb;
       }
 
-      .btn:focus-visible,
-      .nav a:focus-visible,
-      .arrow:focus-visible,
-      .track:focus-visible {
-        outline: 2px solid var(--accent-soft);
-        outline-offset: 3px;
-      }
-
+      /* Footer */
       footer {
         text-align: center;
         color: var(--muted);
@@ -407,25 +289,7 @@
         padding: 0 1rem 2rem;
       }
 
-      /* Tanpa dukungan backdrop-filter: pakai latar yang lebih pekat */
-      @supports not (
-        (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
-      ) {
-        .nav,
-        .profile,
-        .stage,
-        .card {
-          background-color: rgba(30, 27, 40, 0.92);
-        }
-      }
-
-      /* ===== Responsif ===== */
-      @media (max-width: 900px) {
-        .card {
-          flex-basis: calc((100% - var(--gap)) / 2);
-        }
-      }
-
+      /* ===== Responsif HP ===== */
       @media (max-width: 720px) {
         .topbar {
           grid-template-columns: 1fr;
@@ -437,38 +301,32 @@
           justify-self: center;
         }
         .profile {
-          text-align: left;
           flex-direction: row-reverse;
+          text-align: left;
           padding: 0.55rem 1.1rem 0.55rem 0.7rem;
         }
       }
 
       @media (max-width: 560px) {
-        .stage {
-          padding: 1.1rem 2.75rem;
-        }
-        .arrow {
-          width: 32px;
-          height: 32px;
-        }
-        .arrow.prev {
-          left: 0.5rem;
-        }
-        .arrow.next {
-          right: 0.5rem;
-        }
         .card {
-          flex-basis: 100%;
+          /* Di layar HP, tombol pindah ke bawah */
+          grid-template-columns: 60px 1fr;
+          grid-template-areas:
+            "thumb title"
+            "thumb desc"
+            "btn btn";
+          gap: 0.5rem 1rem;
         }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html,
-        .track {
-          scroll-behavior: auto;
+        .thumb {
+          width: 60px;
+          height: 60px;
         }
-        * {
-          transition: none !important;
+        .thumb-num {
+          font-size: 1.5rem;
+        }
+        .btn {
+          margin-top: 0.75rem;
+          text-align: center;
         }
       }
     </style>
@@ -477,8 +335,7 @@
   <body id="top">
     <header class="topbar">
       <nav class="nav" aria-label="Navigasi utama">
-        <a href="#top" aria-current="page">Beranda</a>
-        <a href="#jobsheet">Jobsheet</a>
+        <a href="#top" aria-current="page">Jobsheet</a>
         <a
           href="https://github.com/luckyakbarfebriano/Desain-n-Pemrograman-Web"
           target="_blank"
@@ -490,7 +347,6 @@
       <div class="profile">
         <div>
           <p class="profile-name">Lucky Akbar Febriano</p>
-          <!-- Tambahkan NIM di sini kalau ingin ditampilkan, misalnya: NIM 1234567890 -->
           <p class="profile-detail">12 / 254107020134 / TI-2D</p>
         </div>
         <div class="avatar" aria-hidden="true">L</div>
@@ -504,255 +360,167 @@
       </section>
 
       <section class="showcase" id="jobsheet">
-        <div class="stage">
-          <button
-            class="arrow prev"
-            id="prev"
-            type="button"
-            aria-label="Jobsheet sebelumnya"
-          >
-            &#8249;
-          </button>
+        <!-- Wadah List Baru -->
+        <div class="jobsheet-list">
+          <article class="card">
+            <div class="thumb" aria-hidden="true">
+              <span class="thumb-num">1</span>
+            </div>
+            <h2 class="card-title">Jobsheet 1</h2>
+            <p class="card-desc">Hasil pengerjaan Jobsheet 1.</p>
+            <a class="btn" href="./jobsheet1/">Buka</a>
+          </article>
 
-          <div
-            class="track"
-            id="track"
-            role="region"
-            aria-label="Daftar jobsheet"
-            tabindex="0"
-          >
-            <article class="card">
-              <div class="thumb" aria-hidden="true">
-                <span class="thumb-bar"><i></i><i></i><i></i></span>
-                <span class="thumb-num">1</span>
-              </div>
-              <h2 class="card-title">Jobsheet 1</h2>
-              <p class="card-desc">Hasil pengerjaan Jobsheet 1.</p>
-              <a class="btn" href="./jobsheet1/">Buka</a>
-            </article>
+          <article class="card">
+            <div class="thumb" aria-hidden="true">
+              <span class="thumb-num">2</span>
+            </div>
+            <h2 class="card-title">Jobsheet 2</h2>
+            <p class="card-desc">Hasil pengerjaan Jobsheet 2.</p>
+            <a class="btn" href="./jobsheet2/">Buka</a>
+          </article>
 
-            <article class="card">
-              <div class="thumb" aria-hidden="true">
-                <span class="thumb-bar"><i></i><i></i><i></i></span>
-                <span class="thumb-num">2</span>
-              </div>
-              <h2 class="card-title">Jobsheet 2</h2>
-              <p class="card-desc">Hasil pengerjaan Jobsheet 2.</p>
-              <a class="btn" href="./jobsheet2/">Buka</a>
-            </article>
+          <article class="card">
+            <div class="thumb" aria-hidden="true">
+              <span class="thumb-num">3</span>
+            </div>
+            <h2 class="card-title">Jobsheet 3</h2>
+            <p class="card-desc">Halaman responsif dengan CSS murni.</p>
+            <a class="btn" href="./jobsheet3/">Buka</a>
+          </article>
 
-            <article class="card">
-              <div class="thumb" aria-hidden="true">
-                <span class="thumb-bar"><i></i><i></i><i></i></span>
-                <span class="thumb-num">3</span>
-              </div>
-              <h2 class="card-title">Jobsheet 3</h2>
-              <p class="card-desc">Halaman responsif dengan CSS murni.</p>
-              <a class="btn" href="./jobsheet3/">Buka</a>
-            </article>
+          <article class="card">
+            <div class="thumb" aria-hidden="true">
+              <span class="thumb-num">3B</span>
+              <span class="tag">Bootstrap</span>
+            </div>
+            <h2 class="card-title">Jobsheet 3 (Bootstrap)</h2>
+            <p class="card-desc">Versi Bootstrap 5 dari Jobsheet 3.</p>
+            <a class="btn" href="./jobsheet3bootstrap/">Buka</a>
+          </article>
 
-            <article class="card">
-              <div class="thumb" aria-hidden="true">
-                <span class="thumb-bar"><i></i><i></i><i></i></span>
-                <span class="thumb-num">3B</span>
-                <span class="tag">Bootstrap</span>
-              </div>
-              <h2 class="card-title">Jobsheet 3 (Bootstrap)</h2>
-              <p class="card-desc">Versi Bootstrap 5 dari Jobsheet 3.</p>
-              <a class="btn" href="./jobsheet3bootstrap/">Buka</a>
-            </article>
+          <article class="card">
+            <div class="thumb" aria-hidden="true">
+              <span class="thumb-num">4</span>
+            </div>
+            <h2 class="card-title">Jobsheet 4</h2>
+            <p class="card-desc">Hasil pengerjaan Jobsheet 4.</p>
+            <a class="btn" href="./jobsheet4/">Buka</a>
+          </article>
 
-            <article class="card">
-              <div class="thumb" aria-hidden="true">
-                <span class="thumb-bar"><i></i><i></i><i></i></span>
-                <span class="thumb-num">4</span>
-              </div>
-              <h2 class="card-title">Jobsheet 4</h2>
-              <p class="card-desc">Hasil pengerjaan Jobsheet 4.</p>
-              <a class="btn" href="./jobsheet4/">Buka</a>
-            </article>
+          <article class="card">
+            <div class="thumb" aria-hidden="true">
+              <span class="thumb-num">5</span>
+            </div>
+            <h2 class="card-title">Jobsheet 5</h2>
+            <p class="card-desc">Hasil pengerjaan Jobsheet 5.</p>
+            <a class="btn" href="./jobsheet5/">Buka</a>
+          </article>
 
-            <article class="card">
-              <div class="thumb" aria-hidden="true">
-                <span class="thumb-bar"><i></i><i></i><i></i></span>
-                <span class="thumb-num">5</span>
-              </div>
-              <h2 class="card-title">Jobsheet 5</h2>
-              <p class="card-desc">Hasil pengerjaan Jobsheet 5.</p>
-              <a class="btn" href="./jobsheet5/">Buka</a>
-            </article>
+          <article class="card">
+            <div class="thumb" aria-hidden="true">
+              <span class="thumb-num">6</span>
+            </div>
+            <h2 class="card-title">Jobsheet 6</h2>
+            <p class="card-desc">Hasil pengerjaan Jobsheet 6.</p>
+            <a class="btn" href="./jobsheet6/">Buka</a>
+          </article>
 
-            <article class="card">
-              <div class="thumb" aria-hidden="true">
-                <span class="thumb-bar"><i></i><i></i><i></i></span>
-                <span class="thumb-num">6</span>
-              </div>
-              <h2 class="card-title">Jobsheet 6</h2>
-              <p class="card-desc">Hasil pengerjaan Jobsheet 6.</p>
-              <a class="btn" href="./jobsheet6/">Buka</a>
-            </article>
+          <article class="card">
+            <div class="thumb" aria-hidden="true">
+              <span class="thumb-num">7</span>
+              <span class="tag">PHP/Supa</span>
+            </div>
+            <h2 class="card-title">Jobsheet 7</h2>
+            <p class="card-desc">
+              WE GO GYM: kelola kelas dan anggota dengan PHP dan Supabase.
+            </p>
+            <a
+              class="btn"
+              href="https://desain-n-pemrograman-web-vercel-foz.vercel.app/"
+              >Buka Aplikasi</a
+            >
+          </article>
 
-            <!-- Jobsheet 7: aplikasi PHP + Supabase di proyek Vercel terpisah -->
-            <article class="card">
-              <div class="thumb" aria-hidden="true">
-                <span class="thumb-bar"><i></i><i></i><i></i></span>
-                <span class="thumb-num">7</span>
-                <span class="tag">PHP · Supabase</span>
-              </div>
-              <h2 class="card-title">Jobsheet 7</h2>
-              <p class="card-desc">
-                WE GO GYM: kelola kelas dan anggota dengan PHP dan Supabase.
-              </p>
-              <a
-                class="btn"
-                href="https://desain-n-pemrograman-web-vercel-foz.vercel.app/"
-                >Buka Aplikasi</a
-              >
-            </article>
+          <article class="card">
+            <div class="thumb" aria-hidden="true">
+              <span class="thumb-num">8</span>
+              <span class="tag">PHP/Supa</span>
+            </div>
+            <h2 class="card-title">Jobsheet 8</h2>
+            <p class="card-desc">
+              WE GO GYM: kelola kelas dan anggota dengan PHP dan Supabase.
+            </p>
+            <a
+              class="btn"
+              href="https://desain-n-pemrograman-web-vercel-bls.vercel.app/"
+              >Buka Aplikasi</a
+            >
+          </article>
 
-            <!-- Jobsheet 8: aplikasi PHP + Supabase di proyek Vercel terpisah -->
-            <article class="card">
-              <div class="thumb" aria-hidden="true">
-                <span class="thumb-bar"><i></i><i></i><i></i></span>
-                <span class="thumb-num">8</span>
-                <span class="tag">PHP · Supabase</span>
-              </div>
-              <h2 class="card-title">Jobsheet 8</h2>
-              <p class="card-desc">
-                WE GO GYM: kelola kelas dan anggota dengan PHP dan Supabase.
-              </p>
-              <a
-                class="btn"
-                href="https://desain-n-pemrograman-web-vercel-bls.vercel.app/"
-                >Buka Aplikasi</a
-              >
-            </article>
+          <article class="card">
+            <div class="thumb" aria-hidden="true">
+              <span class="thumb-num">9</span>
+              <span class="tag">PHP/Supa</span>
+            </div>
+            <h2 class="card-title">Jobsheet 9</h2>
+            <p class="card-desc">
+              WE GO GYM: CRUD penuh, pagination, dan pencarian server-side.
+            </p>
+            <a
+              class="btn"
+              href="https://desain-n-pemrograman-web-vercel-64l.vercel.app/"
+              >Buka Aplikasi</a
+            >
+          </article>
 
-            <!-- Jobsheet 9: aplikasi PHP + Supabase di proyek Vercel terpisah -->
-            <article class="card">
-              <div class="thumb" aria-hidden="true">
-                <span class="thumb-bar"><i></i><i></i><i></i></span>
-                <span class="thumb-num">9</span>
-                <span class="tag">PHP · Supabase</span>
-              </div>
-              <h2 class="card-title">Jobsheet 9</h2>
-              <p class="card-desc">
-                WE GO GYM: CRUD penuh (edit &amp; hapus), pagination, dan
-                pencarian server-side untuk kelas dan anggota.
-              </p>
-              <a
-                class="btn"
-                href="https://desain-n-pemrograman-web-vercel-64l.vercel.app/"
-                >Buka Aplikasi</a
-              >
-            </article>
+          <article class="card">
+            <div class="thumb" aria-hidden="true">
+              <span class="thumb-num">10</span>
+              <span class="tag">PHP/Supa</span>
+            </div>
+            <h2 class="card-title">Jobsheet 10</h2>
+            <p class="card-desc">
+              WE GO GYM: autentikasi &amp; manajemen sesi petugas.
+            </p>
+            <a
+              class="btn"
+              href="https://desain-n-pemrograman-web-vercel-iqe.vercel.app/"
+              >Buka Aplikasi</a
+            >
+          </article>
 
-            <!-- Jobsheet 10: aplikasi PHP + Supabase di proyek Vercel terpisah -->
-            <article class="card">
-              <div class="thumb" aria-hidden="true">
-                <span class="thumb-bar"><i></i><i></i><i></i></span>
-                <span class="thumb-num">10</span>
-                <span class="tag">PHP · Supabase</span>
-              </div>
-              <h2 class="card-title">Jobsheet 10</h2>
-              <p class="card-desc">
-                WE GO GYM: autentikasi &amp; manajemen sesi petugas (login,
-                registrasi, logout) untuk mengunci akses kelola data.
-              </p>
-              <a
-                class="btn"
-                href="https://desain-n-pemrograman-web-vercel-iqe.vercel.app/"
-                >Buka Aplikasi</a
-              >
-            </article>
+          <article class="card">
+            <div class="thumb" aria-hidden="true">
+              <span class="thumb-num">11</span>
+              <span class="tag">PHP/Supa</span>
+            </div>
+            <h2 class="card-title">Jobsheet 11</h2>
+            <p class="card-desc">WE GO GYM: autentikasi &amp; Keamanan Web.</p>
+            <a
+              class="btn"
+              href="https://desain-n-pemrograman-web-vercel-job.vercel.app/"
+              >Buka Aplikasi</a
+            >
+          </article>
 
-            <!-- Jobsheet 11: Keamanan web dasar -->
-            <article class="card">
-              <div class="thumb" aria-hidden="true">
-                <span class="thumb-bar"><i></i><i></i><i></i></span>
-                <span class="thumb-num">11</span>
-                <span class="tag">PHP · Supabase</span>
-              </div>
-              <h2 class="card-title">Jobsheet 11</h2>
-              <p class="card-desc">
-                WE GO GYM: autentikasi &amp; (Keamanan Web).
-              </p>
-              <a
-                class="btn"
-                href="https://desain-n-pemrograman-web-vercel-job.vercel.app/"
-                >Buka Aplikasi</a
-              >
-            </article>
-
-            <!-- Jobsheet 12: Integrasi Modul Kelas GYM -->
-            <article class="card">
-              <div class="thumb" aria-hidden="true">
-                <span class="thumb-bar"><i></i><i></i><i></i></span>
-                <span class="thumb-num">12</span>
-                <span class="tag">PHP · Supabase</span>
-              </div>
-              <h2 class="card-title">Jobsheet 12</h2>
-              <p class="card-desc">
-                WE GO GYM: integrasi &amp; Modul Kelas GYM.
-              </p>
-              <a
-                class="btn"
-                href="https://desain-n-pemrograman-web-vercel-job-one.vercel.app/"
-                >Buka Aplikasi</a
-              >
-            </article>
-          </div>
-
-          <button
-            class="arrow next"
-            id="next"
-            type="button"
-            aria-label="Jobsheet berikutnya"
-          >
-            &#8250;
-          </button>
+          <article class="card">
+            <div class="thumb" aria-hidden="true">
+              <span class="thumb-num">12</span>
+              <span class="tag">PHP/Supa</span>
+            </div>
+            <h2 class="card-title">Jobsheet 12</h2>
+            <p class="card-desc">WE GO GYM: integrasi &amp; Modul Kelas GYM.</p>
+            <a
+              class="btn"
+              href="https://desain-n-pemrograman-web-vercel-job-one.vercel.app/"
+              >Buka Aplikasi</a
+            >
+          </article>
         </div>
       </section>
     </main>
 
     <footer>© 2026 Lucky Akbar Febriano</footer>
-
-    <script>
-      const track = document.getElementById("track");
-      const prev = document.getElementById("prev");
-      const next = document.getElementById("next");
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
-
-      // Lebar satu kartu + jarak antar kartu
-      function cardStep() {
-        const card = track.querySelector(".card");
-        const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-        return card.getBoundingClientRect().width + gap;
-      }
-
-      // Geser sebanyak kartu yang sedang terlihat (3 di desktop, 1 di HP)
-      function scrollPage(direction) {
-        const step = cardStep();
-        const visible = Math.max(1, Math.round(track.clientWidth / step));
-        track.scrollBy({
-          left: direction * step * visible,
-          behavior: reduceMotion ? "auto" : "smooth",
-        });
-      }
-
-      function updateArrows() {
-        const max = track.scrollWidth - track.clientWidth - 1;
-        prev.disabled = track.scrollLeft <= 1;
-        next.disabled = track.scrollLeft >= max;
-      }
-
-      prev.addEventListener("click", () => scrollPage(-1));
-      next.addEventListener("click", () => scrollPage(1));
-      track.addEventListener("scroll", updateArrows, { passive: true });
-      window.addEventListener("resize", updateArrows);
-      updateArrows();
-    </script>
   </body>
 </html>
