@@ -1,9 +1,7 @@
-            </main>
+            </div>
 
-            <footer>
-                <p>&copy; 2026 WE GO GYM &mdash; Jobsheet 9</p>
-            </footer>
-        </div>
+            <footer>&copy; 2026 WE GO GYM &mdash; Jobsheet 9.</footer>
+        </main>
     </div>
     <script src="<?php echo $base; ?>assets/js/shell.js"></script>
     <script src="<?php echo $base; ?>assets/js/app.js"></script>

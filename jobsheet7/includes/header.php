@@ -7,42 +7,62 @@ $__rel = ltrim(str_replace('\\', '/', substr($__scriptDir, strlen($__jobsheetRoo
 $base = $__rel === '' ? '' : str_repeat('../', substr_count($__rel, '/') + 1);
 $sudahLogin = false;
 ?>
+<?php
+$__uri = $_SERVER['REQUEST_URI'] ?? '';
+$__inKelas = strpos($__uri, '/kelas/') !== false;
+$__inAnggota = strpos($__uri, '/anggota/') !== false;
+$__inPend = strpos($__uri, '/pendaftaran/') !== false;
+$__inAuth = strpos($__uri, '/auth/') !== false;
+$__inBeranda = !$__inKelas && !$__inAnggota && !$__inPend && !$__inAuth;
+$bolehKelola = true;
+$__heading = isset($page_heading) ? $page_heading : (isset($page_title) ? $page_title : 'Beranda');
+$__action = null;
+if ($bolehKelola && strpos($__uri, '/kelas/list.php') !== false) {
+    $__action = ['kelas/tambah.php', 'Tambah Kelas'];
+} elseif ($bolehKelola && strpos($__uri, '/anggota/list.php') !== false) {
+    $__action = ['anggota/tambah.php', 'Tambah Member'];
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WE GO GYM<?php echo isset($page_title) ? ' | ' . $page_title : ''; ?></title>
+    <title>WE GO GYM<?php echo isset($page_title) ? ' | ' . htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8') : ''; ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="<?php echo $base; ?>assets/css/style.css">
 </head>
 <body>
     <div class="shell">
         <div class="sidebar-overlay" id="sidebar-overlay"></div>
         <aside class="sidebar" id="sidebar">
-            <div class="brand">
-                <span class="brand-mark">🏋️</span>
-                <span class="brand-name">WE GO GYM</span>
-            </div>
-            <nav class="side-nav">
-                <a href="<?php echo $base; ?>index.php" class="nav-item<?php echo (strpos($_SERVER['REQUEST_URI'], '/index.php') !== false) ? ' active' : ''; ?>"><span class="nav-icon">🏠</span><span>Beranda</span></a>
-                <a href="<?php echo $base; ?>kelas/list.php" class="nav-item<?php echo (strpos($_SERVER['REQUEST_URI'], '/kelas/list.php') !== false) ? ' active' : ''; ?>"><span class="nav-icon">🏋️</span><span>Daftar Kelas</span></a>
-                <a href="<?php echo $base; ?>kelas/tambah.php" class="nav-item<?php echo (strpos($_SERVER['REQUEST_URI'], '/kelas/tambah.php') !== false) ? ' active' : ''; ?>"><span class="nav-icon">➕</span><span>Tambah Kelas</span></a>
-                <a href="<?php echo $base; ?>anggota/list.php" class="nav-item<?php echo (strpos($_SERVER['REQUEST_URI'], '/anggota/list.php') !== false) ? ' active' : ''; ?>"><span class="nav-icon">👥</span><span>Daftar Anggota</span></a>
-                <a href="<?php echo $base; ?>anggota/tambah.php" class="nav-item<?php echo (strpos($_SERVER['REQUEST_URI'], '/anggota/tambah.php') !== false) ? ' active' : ''; ?>"><span class="nav-icon">➕</span><span>Tambah Anggota</span></a>
-            </nav>
-            <div class="sidebar-footer">
-                <a href="https://desain-n-pemrograman-web-vercel.vercel.app/" class="back-to-menu">&larr; Kembali ke Menu</a>
+            <div>
+                <a href="https://desain-n-pemrograman-web-vercel.vercel.app/" class="back-link">&larr; Kembali ke Menu</a>
+                <h1 class="brand-title">WE GO GYM</h1>
+                <nav class="side-nav">
+                    <a href="<?php echo $base; ?>index.php" class="nav-item<?php echo $__inBeranda ? ' active' : ''; ?>"><i class="fa-solid fa-house"></i> Beranda</a>
+                    <a href="<?php echo $base; ?>kelas/list.php" class="nav-item<?php echo $__inKelas ? ' active' : ''; ?>"><i class="fa-solid fa-list-check"></i> Daftar Kelas</a>
+                    <a href="<?php echo $base; ?>anggota/list.php" class="nav-item<?php echo $__inAnggota ? ' active' : ''; ?>"><i class="fa-regular fa-user"></i> Member</a>
+                </nav>
             </div>
         </aside>
-        <div class="content-area">
-            <div class="topbar">
+
+        <main class="content-area">
+            <div class="mobile-bar">
                 <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
-                <div class="topbar-title"><?php echo isset($page_title) ? $page_title : 'Beranda'; ?></div>
-                <div class="topbar-user">
-                    <span class="guest-tag">Mode Tanpa Login</span>
+                <span class="mobile-brand">WE GO GYM</span>
+            </div>
+            <div class="page-header">
+                <h2 class="main-title"><?php echo htmlspecialchars($__heading, ENT_QUOTES, 'UTF-8'); ?></h2>
+                <div class="header-right">
+                    <?php if ($__action): ?>
+                        <a class="btn-blue" href="<?php echo $base . $__action[0]; ?>"><i class="fa-solid fa-plus"></i> <?php echo $__action[1]; ?></a>
+                    <?php endif; ?>
+                    <span class="user-chip guest"><i class="fa-regular fa-user"></i> Mode Tanpa Login</span>
                 </div>
             </div>
-            <main class="dashboard-main">
+
+            <div class="page-body">

@@ -3,40 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WE GO GYM || Daftar Anggota</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>WE GO GYM | Daftar Anggota</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
     <div class="shell">
       <div class="sidebar-overlay" id="sidebar-overlay"></div>
       <aside class="sidebar" id="sidebar">
-        <div class="brand">
-          <span class="brand-mark">🏋️</span>
-          <span class="brand-name">WE GO GYM</span>
-        </div>
-        <nav class="side-nav">
-                <a href="../index.html" class="nav-item"><span class="nav-icon">🏠</span><span>Home</span></a>
-                <a href="../kelas/list.html" class="nav-item"><span class="nav-icon">🏋️</span><span>Daftar Kelas</span></a>
-                <a href="../kelas/tambah.html" class="nav-item"><span class="nav-icon">➕</span><span>Tambah Kelas</span></a>
-                <a href="../anggota/list.html" class="nav-item active"><span class="nav-icon">👥</span><span>Daftar Anggota</span></a>
-                <a href="../anggota/tambah.html" class="nav-item"><span class="nav-icon">➕</span><span>Tambah Anggota</span></a>
-        </nav>
-        <div class="sidebar-footer">
-          <a href="../../index.html" class="back-to-menu">&larr; Kembali ke Menu</a>
+        <div>
+          <a href="../../index.html" class="back-link">&larr; Kembali ke Menu</a>
+          <h1 class="brand-title">WE GO GYM</h1>
+          <nav class="side-nav">
+            <a href="../index.html" class="nav-item"><i class="fa-solid fa-house"></i> Beranda</a>
+            <a href="../kelas/list.html" class="nav-item"><i class="fa-solid fa-list-check"></i> Daftar Kelas</a>
+            <a href="../anggota/list.html" class="nav-item active"><i class="fa-regular fa-user"></i> Member</a>
+          </nav>
         </div>
       </aside>
-      <div class="content-area">
-        <div class="topbar">
+
+      <main class="content-area">
+        <div class="mobile-bar">
           <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
-          <div class="topbar-title">Daftar Anggota</div>
-          <div class="topbar-user">
-            <span class="guest-tag">Mode Tanpa Login</span>
+          <span class="mobile-brand">WE GO GYM</span>
+        </div>
+        <div class="page-header">
+          <h2 class="main-title">Daftar Anggota</h2>
+          <div class="header-right">
+            <a class="btn-blue" href="tambah.html"><i class="fa-solid fa-plus"></i> Tambah Member</a>
+            <span class="user-chip guest"><i class="fa-regular fa-user"></i> Mode Tanpa Login</span>
           </div>
         </div>
-        <main class="dashboard-main">
+
+        <div class="page-body">
       <section>
         <h2>Daftar Anggota</h2>
         <table>
@@ -73,12 +75,11 @@
           </tbody>
         </table>
       </section>
-    </main>
+    
+</div>
 
-        <footer>
-          <p>&copy; 2026 WE GO GYM &mdash; Jobsheet 1.</p>
-        </footer>
-      </div>
+        <footer>&copy; 2026 WE GO GYM &mdash; Jobsheet 2.</footer>
+      </main>
     </div>
     <script src="../assets/js/shell.js"></script>
 

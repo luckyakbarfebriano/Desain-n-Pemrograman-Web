@@ -1,14 +1,3 @@
-// ===== Hamburger menu (JS-driven, menggantikan checkbox hack) =====
-function initNavToggle() {
-  const toggleBtn = document.getElementById("nav-toggle-btn");
-  const nav = document.querySelector("header nav");
-  if (!toggleBtn || !nav) return;
-
-  toggleBtn.addEventListener("click", function () {
-    nav.classList.toggle("nav-open");
-  });
-}
-
 // ===== Konfirmasi hapus (front-end only, belum ke server) =====
 function initHapusConfirm() {
   document.querySelectorAll(".btn-hapus").forEach(function (btn) {
@@ -62,41 +51,39 @@ function initValidasiForm() {
   form.addEventListener("submit", function (e) {
     let valid = true;
 
-    const judul = form.querySelector("[name='judul'], [name='nama']");
-    if (judul && judul.value.trim() === "") {
-      tampilkanError(judul, "Field ini wajib diisi.");
+    // Field utama: nama_kelas (form kelas) atau nama (form anggota)
+    const namaUtama = form.querySelector("[name='nama_kelas'], [name='nama']");
+    if (namaUtama && namaUtama.value.trim() === "") {
+      tampilkanError(namaUtama, "Field ini wajib diisi.");
       valid = false;
-    } else if (judul) {
-      hapusError(judul);
+    } else if (namaUtama) {
+      hapusError(namaUtama);
     }
 
-    const pengarang = form.querySelector("[name='pengarang']");
-    if (pengarang && pengarang.value.trim() === "") {
-      tampilkanError(pengarang, "Pengarang wajib diisi.");
+    const instruktur = form.querySelector("[name='instruktur']");
+    if (instruktur && instruktur.value.trim() === "") {
+      tampilkanError(instruktur, "Instruktur wajib diisi.");
       valid = false;
-    } else if (pengarang) {
-      hapusError(pengarang);
+    } else if (instruktur) {
+      hapusError(instruktur);
     }
 
-    const tahun = form.querySelector("[name='tahun']");
-    if (tahun) {
-      const nilai = parseInt(tahun.value, 10);
-      if (isNaN(nilai) || nilai < 1900 || nilai > 2026) {
-        tampilkanError(tahun, "Tahun harus di antara 1900-2026.");
-        valid = false;
-      } else {
-        hapusError(tahun);
-      }
+    const jadwal = form.querySelector("[name='jadwal']");
+    if (jadwal && jadwal.value.trim() === "") {
+      tampilkanError(jadwal, "Jadwal wajib diisi.");
+      valid = false;
+    } else if (jadwal) {
+      hapusError(jadwal);
     }
 
-    const stok = form.querySelector("[name='stok']");
-    if (stok) {
-      const nilai = parseInt(stok.value, 10);
+    const kapasitas = form.querySelector("[name='kapasitas']");
+    if (kapasitas) {
+      const nilai = parseInt(kapasitas.value, 10);
       if (isNaN(nilai) || nilai < 0) {
-        tampilkanError(stok, "Stok tidak boleh negatif.");
+        tampilkanError(kapasitas, "Kapasitas tidak boleh negatif.");
         valid = false;
       } else {
-        hapusError(stok);
+        hapusError(kapasitas);
       }
     }
 
@@ -107,7 +94,6 @@ function initValidasiForm() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  initNavToggle();
   initHapusConfirm();
   initTableFilter();
   initValidasiForm();
