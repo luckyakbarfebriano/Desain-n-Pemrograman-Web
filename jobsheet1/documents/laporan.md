@@ -11,7 +11,6 @@ Jobsheet 1 adalah tahap paling awal pembuatan antarmuka proyek. Folder ini belum
 - `index.html` menjadi beranda WE GO GYM yang menampilkan ringkasan aktivitas, jumlah kelas dan anggota, tabel kelas, serta tombol aksi cepat.
 - Folder `kelas` berisi halaman daftar kelas dan form tambah kelas.
 - Folder `anggota` berisi halaman daftar anggota dan form tambah anggota.
-- Folder `buku` berisi halaman daftar dan form tambah buku dari konsep SIMPUS-kecil.
 - Sidebar dan tautan HTML berfungsi sebagai navigasi antarhalaman.
 - Tabel berfungsi menampilkan data contoh, sedangkan form hanya menyediakan tampilan input dan belum mengirim data ke server.
 

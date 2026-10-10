@@ -65,7 +65,7 @@ if ($bolehKelola && strpos($__uri, '/kelas/list.php') !== false) {
                     <?php if ($__action): ?>
                         <a class="btn-blue" href="<?php echo $base . $__action[0]; ?>"><i class="fa-solid fa-plus"></i> <?php echo $__action[1]; ?></a>
                     <?php endif; ?>
-                    <span class="user-chip guest"><i class="fa-regular fa-user"></i> Mode Tanpa Login</span>
+
                 </div>
             </div>
 
