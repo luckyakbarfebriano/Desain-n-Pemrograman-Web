@@ -10,7 +10,7 @@ Jobsheet 1 masih menaruh halaman tanpa folder aset bersama. Pada Jobsheet 2 mula
 
 - `assets/css/style.css` menjadi stylesheet bersama untuk warna, tipografi, sidebar, kartu statistik, tabel, form, tombol, jarak, dan tampilan responsif.
 - `assets/js/shell.js` mengatur perilaku shell halaman. Fungsi `initSidebarToggle()` membuka atau menutup sidebar pada layar kecil dan menggunakan overlay agar menu dapat ditutup dengan klik di luar.
-- Halaman `index.html`, `kelas`, `anggota`, dan `buku` memakai aset tersebut melalui tag `link` dan `script`.
+- Halaman `index.html`, `kelas`, dan `anggota` memakai aset tersebut melalui tag `link` dan `script`.
 
 ## Dampak Tahap Ini
 

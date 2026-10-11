@@ -4,7 +4,7 @@
 
 ## Perubahan dari Jobsheet 2
 
-Jobsheet 3 mempertahankan pola aset bersama dari Jobsheet 2, lalu menerapkannya secara lebih konsisten ke seluruh halaman daftar dan form. Fokusnya bukan database, melainkan standardisasi komponen agar halaman kelas, anggota, dan buku terasa sebagai satu aplikasi.
+Jobsheet 3 mempertahankan pola aset bersama dari Jobsheet 2, lalu menerapkannya secara lebih konsisten ke seluruh halaman daftar dan form. Fokusnya bukan database, melainkan standardisasi komponen agar halaman kelas dan anggota terasa sebagai satu aplikasi.
 
 ## Isi dan Fungsi
 

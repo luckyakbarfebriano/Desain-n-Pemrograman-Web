@@ -4,7 +4,7 @@
 
 ## Ringkasan Pekerjaan
 
-`jobsheet3bootstrap` merupakan variasi dari Jobsheet 3 yang menerapkan framework **Bootstrap 5.3.0** pada antarmuka aplikasi. Folder ini tetap menggunakan HTML statis dan belum terhubung ke PHP, database, Supabase, atau file JSON. Tujuan utamanya adalah membandingkan atau menerapkan pendekatan styling berbasis framework pada halaman WE GO GYM dan SIMPUS-kecil, sambil tetap mempertahankan identitas visual melalui CSS buatan sendiri.
+`jobsheet3bootstrap` merupakan variasi dari Jobsheet 3 yang menerapkan framework **Bootstrap 5.3.0** pada antarmuka aplikasi. Folder ini tetap menggunakan HTML statis dan belum terhubung ke PHP, database, Supabase, atau file JSON. Tujuan utamanya adalah menerapkan pendekatan styling berbasis framework pada halaman WE GO GYM, sambil tetap mempertahankan identitas visual melalui CSS buatan sendiri.
 
 ## Perubahan dari Jobsheet 3
 
@@ -23,7 +23,7 @@ Dengan Bootstrap, banyak komponen tidak perlu dibuat seluruhnya dari nol. Class 
 - `kelas/list.html` menampilkan tabel kelas dengan `table-striped`, `table-hover`, `align-middle`, dan `table-responsive`. Tombol tambah, edit, dan hapus menggunakan class tombol Bootstrap.
 - `kelas/tambah.html` menyediakan form tambah kelas dengan `form-label`, `form-control`, `mb-3`, dan card agar input tersusun rapi.
 - `anggota/list.html` dan `anggota/tambah.html` menerapkan pola Bootstrap yang sama untuk daftar serta form anggota.
-- `buku/list.html` dan `buku/tambah.html` memakai pola navbar Bootstrap dengan `navbar-expand-lg`, `navbar-toggler`, `collapse`, `navbar-nav`, dan `nav-link`. Komponen tersebut membuat menu dapat berubah menjadi tombol navigasi pada layar kecil.
+- Navigasi pada halaman beranda, kelas, dan anggota memakai pola navbar Bootstrap dengan `navbar-expand-lg`, `navbar-toggler`, `collapse`, `navbar-nav`, dan `nav-link`. Komponen tersebut membuat menu dapat berubah menjadi tombol navigasi pada layar kecil.
 - `assets/css/style.css` tetap dipakai sebagai CSS khusus aplikasi. Isinya mengatur warna tema WE GO GYM, sidebar, layout shell, typography, tabel, form, tombol custom, dan perilaku responsif yang tidak disediakan secara khusus oleh Bootstrap.
 - `assets/js/shell.js` tetap mengatur sidebar custom WE GO GYM, terutama tombol menu mobile dan overlay sidebar.
 
@@ -47,7 +47,7 @@ Class `table` memberikan struktur tabel dasar. `table-striped` memberi warna sel
 
 ### 5. Navbar Collapsible
 
-Pada halaman buku, `navbar-toggler` dan `collapse` memanfaatkan JavaScript Bootstrap Bundle untuk membuka atau menutup menu navigasi di layar kecil. Atribut `data-bs-toggle="collapse"` dan `data-bs-target="#navMenu"` menghubungkan tombol dengan area menu.
+Pada halaman yang menggunakan navbar Bootstrap, `navbar-toggler` dan `collapse` memanfaatkan JavaScript Bootstrap Bundle untuk membuka atau menutup menu navigasi di layar kecil. Atribut `data-bs-toggle="collapse"` dan `data-bs-target="#navMenu"` menghubungkan tombol dengan area menu.
 
 ## Hubungan dengan CSS Custom
 

@@ -1,110 +1,50 @@
-# Wireframe & User Flow — SIMPUS-kecil
+# Wireframe & User Flow — WE GO GYM
 
 Sub-CPMK: Merancang UI/UX aplikasi (proyek).
 
-Halaman yang sudah ada (Beranda, Daftar/Tambah Buku, Daftar/Tambah Anggota — Jobsheet 1-3) belum mencakup fitur Login, Dashboard Petugas, dan Peminjaman/Pengembalian. Dokumen ini merancang wireframe untuk halaman-halaman tersebut sebelum diimplementasikan mulai Jobsheet 5 dan seterusnya.
+Dokumen ini menyempurnakan rancangan Jobsheet 4 agar sesuai dengan aplikasi WE GO GYM. Fitur yang dirancang adalah login, dashboard, pengelolaan kelas dan member, pendaftaran kelas, penyelesaian kelas, serta riwayat pendaftaran.
 
 ## Aktor
 
-- **Tamu**: hanya bisa melihat katalog buku (Beranda, Daftar Buku) tanpa login.
-- **Petugas**: login untuk mengakses seluruh fitur CRUD dan transaksi peminjaman.
+- **Pengunjung**: melihat beranda, daftar kelas, dan daftar member.
+- **Pengguna terdaftar**: login untuk mengelola pendaftaran kelas.
 
-## User Flow — Peminjaman Buku
+## User Flow — Pendaftaran Kelas
 
-```
-[Petugas Login] -> [Dashboard] -> [Pilih menu "Peminjaman Baru"]
-        -> [Pilih Anggota] -> [Pilih Buku (stok > 0)]
-        -> [Simpan] -> [Stok buku berkurang 1] -> [Kembali ke Dashboard]
-```
-
-## User Flow — Pengembalian Buku
-
-```
-[Dashboard] -> [Menu "Pengembalian"] -> [Cari transaksi aktif (anggota/buku)]
-        -> [Tandai "Dikembalikan"] -> [Stok buku bertambah 1]
-        -> [Kembali ke Dashboard]
+```text
+[Login] -> [Dashboard] -> [Daftar ke Kelas]
+        -> [Pilih Member] -> [Pilih Kelas dengan kapasitas tersedia]
+        -> [Simpan] -> [Pendaftaran aktif] -> [Dashboard]
 ```
 
-## Wireframe: Halaman Login
+## User Flow — Penyelesaian Kelas
 
-```
-+--------------------------------------+
-|              SIMPUS-kecil            |
-|--------------------------------------|
-|                                      |
-|        [ Login Petugas ]            |
-|                                      |
-|   Username : [______________]       |
-|   Password : [______________]       |
-|                                      |
-|          [   Masuk   ]              |
-|                                      |
-|   Belum punya akun? Daftar di sini  |
-+--------------------------------------+
+```text
+[Dashboard] -> [Selesaikan Kelas] -> [Cari pendaftaran aktif]
+        -> [Tandai selesai] -> [Riwayat diperbarui]
 ```
 
-## Wireframe: Dashboard Petugas
+## Rancangan Halaman
 
-```
-+-----------------------------------------------------+
-| SIMPUS-kecil     Beranda | Buku | Anggota | Peminjaman | (Nama Petugas) Logout |
-|-------------------------------------------------------|
-|  [Total Buku]   [Total Anggota]   [Sedang Dipinjam]    |
-|                                                         |
-|  Aksi Cepat:                                           |
-|  [ + Peminjaman Baru ]   [ + Pengembalian ]            |
-|                                                         |
-|  Transaksi Terbaru                                     |
-|  --------------------------------------------------    |
-|  Anggota | Buku | Tgl Pinjam | Status                  |
-+-----------------------------------------------------+
-```
+```text
+Login:
+[Username] [Password] [Masuk] [Daftar akun]
 
-## Wireframe: Form Peminjaman
+Dashboard:
+[Total Kelas] [Total Member] [Pendaftaran Aktif]
+[+ Daftar ke Kelas] [+ Selesaikan Kelas]
 
-```
-+--------------------------------------+
-|  Form Peminjaman Buku                |
-|--------------------------------------|
-|  Anggota : [ dropdown pilih anggota ]|
-|  Buku    : [ dropdown, hanya stok>0 ]|
-|  Tanggal Pinjam : [ auto: hari ini ] |
-|                                      |
-|          [  Simpan Peminjaman  ]    |
-+--------------------------------------+
+Pendaftaran:
+Member [dropdown] | Kelas [dropdown kapasitas tersedia]
+[Simpan Pendaftaran]
+
+Penyelesaian:
+[Cari member atau kelas] -> [Selesaikan]
 ```
 
-## Wireframe: Form Pengembalian
+## Aturan Interaksi
 
-```
-+--------------------------------------+
-|  Pengembalian Buku                   |
-|--------------------------------------|
-|  Cari transaksi aktif:               |
-|  [ nama anggota / judul buku ______ ]|
-|                                      |
-|  Anggota | Buku | Tgl Pinjam | [Kembalikan] |
-+--------------------------------------+
-```
-
-## Wireframe: Riwayat Peminjaman per Anggota
-
-```
-+-------------------------------------------------------------+
-|  Riwayat Peminjaman — Siti Aminah                           |
-|-------------------------------------------------------------|
-|  Buku                      | Pinjam  | Kembali | Status     |
-|  Laskar Pelangi            | 01/07   | 10/07   | Selesai    |
-|  Bumi Manusia              | 15/07   | -       | Dipinjam   |
-|  The Psychology of Money   | 20/07   | 25/07   | Selesai    |
-|  Crypto Trading Guide      | 05/08   | -       | Dipinjam   |
-|  The Richest Man in Babylon| 10/08   | 20/08   | Selesai    |
-+-------------------------------------------------------------+
-
-```
-
-## Konsistensi dengan Desain yang Sudah Berjalan
-
-- Warna aksen, tipografi navbar, dan gaya tabel/kartu mengikuti `assets/css/style.css` yang sudah dibangun sejak Jobsheet 2-3.
-- Navbar akan ditambah menu **Peminjaman** dan indikator status login (nama petugas / tombol Logout) mulai implementasi di Jobsheet 10.
-- Edge case yang perlu ditangani saat implementasi: buku stok habis tidak boleh dipilih di form peminjaman; anggota dengan tunggakan terlambat divalidasi di Jobsheet 12 (tugas mandiri).
+- Kelas dengan kapasitas penuh tidak ditampilkan sebagai pilihan pendaftaran.
+- Data form divalidasi sebelum diproses.
+- Tombol hapus meminta konfirmasi sebelum menghapus baris dari tampilan.
+- Pendaftaran aktif dapat ditandai selesai satu kali.
